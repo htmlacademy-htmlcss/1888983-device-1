@@ -4,9 +4,63 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
   </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>
+  <body>
+    <header class="page-header">
+      <nav class="navigation">
+        <a class="navigation-logo" href="#">
+          <img class="page-header-logo" alt="Логотип магазина «Девайс»." src="#">
+        </a>
+        <form action="https://echo.htmlacademy.ru/" method="get">
+          <label for="search" class="visually-hidden">Поиск по сайту</label>
+          <input class="search-field" placeholder="Поиск по сайту" type="search" name="search-field id="search">
+          <button class="search-button" type="submit">Найти</button>
+        </form>
+        <ul class="navigation-list navigation-user">
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">
+              Войти
+            </a>
+          </li> <!-- На странице каталога здесь присутствует кнопка «Выйти»,
+            но на главной её нет, потому что вход не выполнен. Как я понимаю,
+            при выполненном входе кнопка "Войти" меняется на кнопку личного
+            кабинета и рядом добавляется кнопка «Выйти», то есть код страницы
+            немного изменяется и для «чистой» главной и главной после входа он
+            будет разной, поэтому добавлять сюда кнопку «Выйти» я не стал. -->
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">
+              Сравнить
+            </a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Корзина</a>
+          </li>
+        </ul>
+        <a class="catalog-button" href="#">Каталог товаров</a>
+        <a class="catalog-plus-button" href="#" class="visually-hidden">
+          Кнопка «Каталог товаров»
+        </a>
+        <!-- Сомневаюсь, нужна ли тут ссылка или кнопка. С одной стороны,
+          это интерактив на странице, но, если js не работает, то она должна
+          вести в какой-то каталог. Поэтому дал ссылку. -->
+        <ul class="navigation-list">
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Доставка</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Гарантия</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+
+
 
   </body>
 </html>
