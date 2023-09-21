@@ -83,7 +83,7 @@
     </header>
 
     <main class="main-index">
-      <h1 class="visually-hidden">Магазин «Девайс»</h1>
+      <h1 class="visually-hidden">Интернет-магазин «Девайс»</h1>
 
       <section class="featured">
         <h2 class="featured-title visually-hidden">Избранные товары</h2>
@@ -209,17 +209,17 @@
         </ul>
       </section>
 
-      <section class="services-menu">
-        <h2 class="visually-hidden">Меню услуг</h2>
-        <ul class="services-menu-list">
-          <li class="services-menu-list-item">
-            <button class="button services-button services-button-current">Доставка</button>
+      <section class="advantages-menu">
+        <h2 class="visually-hidden">Наши преимущества</h2>
+        <ul class="advantages-menu-list">
+          <li class="advantages-menu-list-item">
+            <button class="button advantages-button advantages-button-current">Доставка</button>
           </li>
-          <li class="services-menu-list-item">
-            <button class="button services-button">Гарантия</button>
+          <li class="advantages-menu-list-item">
+            <button class="button advantages-button">Гарантия</button>
           </li>
-          <li class="services-menu-list-item">
-            <button class="button services-button">Кредит</button>
+          <li class="advantages-menu-list-item">
+            <button class="button advantages-button">Кредит</button>
           </li>
         </ul>
       </section>
@@ -228,28 +228,31 @@
         поэтому поставил побольше классов. Первый вроде как одинаков
         для всех кнопок (за парой исключений), а остальные под это меню. -->
 
-      <section class="service">
-        <h2 class="service-header">Доставка</h2>
-        <p class="service-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
-        <img class="service-image" src="#" alt="Доставка.">
+      <section class="advantage">
+        <h2 class="advantage-header">Доставка</h2>
+        <p class="advantage-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+        <img class="advantage-image" src="#" alt="Доставка.">
       </section>
 
-      <section class="service">
-        <h2 class="service-header">Гарантия</h2>
-        <p class="service-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.
+      <section class="advantage">
+        <h2 class="advantage-header">Гарантия</h2>
+        <p class="advantage-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.
           Товар, не дом, конечно же.</p>
-        <img class="service-image" src="#" alt="Гарантия.">
+        <img class="advantage-image" src="#" alt="Гарантия.">
       </section>
 
-      <section class="service">
-        <h2 class="service-header">Кредит</h2>
-        <p class="service-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
-        <img class="service-image" src="#" alt="Кредит.">
+      <section class="advantage">
+        <h2 class="advantage-header">Кредит</h2>
+        <p class="advantage-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
+        <img class="advantage-image" src="#" alt="Кредит.">
       </section>
 
       <section class="rare-item-order">
         <a class="button rare-item-order-button" href="#">Доставим редкий товар под заказ</a>
       </section>
+
+      <!-- Если я всё правильно понял, значко i справа — псевдоэлемент,
+        а не кнопка. В стайлгайде его нет.-->
 
       <section class="about">
         <h2 class="about-title">О нас</h2>
@@ -304,6 +307,57 @@
       </section>
 
     </main>
+
+    <footer class="page-footer">
+      <section class="footer-contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <img class="footer-contacts-logo" alt="Логотип магазина «Девайс»." src="#">
+        <address class="footer-contacts-address">
+          <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+          <a class="footer-contacts-address-phone" href="tel:78128121212">Тел.: +7 (812) 812-12-12</a>
+        </address>
+      </section>
+
+      <section class="footer-navigation">
+        <h2 class="visually-hidden">Навигация по сайту</h2>
+        <ul class="footer-navigation-list">
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Доставка</a>
+          </li>
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Гарантия</a>
+          </li>
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="footer-social">
+        <h2 class="visually-hidden">Мы в социальных сетях</h2>
+        <ul class="footer-social-list">
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://t.me/htmlacademy">
+              <span class="visually-hidden">Telegram</span>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://www.youtube.com/user/htmlacademyru">
+              <span class="visually-hidden">Youtube</span>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://twitter.com/htmlacademy_ru">
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+        </ul>
+        <a class="footer-developer" href="https://htmlacademy.ru/">
+          <img class="footer-developer-logo" alt="Сделано в .html Academy" src="#">
+        </a>
+      </section>
+
+    </footer>
 
 
 
