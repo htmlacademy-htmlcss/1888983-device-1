@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Девайс</title>
+  </head>
+
+  <body>
+    <header class="page-header">
+      <nav class="navigation">
+        <a class="navigation-logo" href="index.html">
+          <img class="page-header-logo" alt="Логотип магазина «Девайс»." src="#">
+        </a>
+        <form action="https://echo.htmlacademy.ru/" method="get">
+          <label for="search" class="visually-hidden">Поиск по сайту</label>
+          <input class="navigation-search" placeholder="Поиск по сайту" type="text" name="search" id="search">
+          <button class="navigation-search-button" type="submit">Найти</button>
+        </form>
+        <ul class="navigation-list navigation-user">
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Коля Петухов</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Выйти</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Сравнить</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Корзина</a>
+          </li>
+        </ul>
+        <ul class="navigation-list">
+          <li class="navigation-item">
+            <a class="navigation-item" href="#">Каталог товаров</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link navigation-button" href="#">
+              <span class="visually-hidden">Кнопка «Каталог товаров»</span>
+            </a>
+          </li>
+
+          <!-- Сомневаюсь, нужна ли тут ссылка или кнопка. С одной стороны,
+          это интерактив на странице, но, если js не работает, то она должна
+          вести в какой-то каталог. Поэтому дал ссылку. -->
+
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Доставка</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Гарантия</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <ul class="navigation-list catalog">
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Виртуальная реальность</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Моноподы для селфи</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Экшн-камеры</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Фитнес-браслеты</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Умные часы</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">Квадрокоптеры</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-selfie">
+      <header class="selfie-header">
+        <h1 class="selfie-header-title">Моноподы для селфи</h1>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="#">Каталог товаров</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link">Моноподы для селфи</a>
+          </li>
+        </ul>
+      </header>
+
+      <section class="filter">
+        <h2 class="filter-header">Фильтр:</h2>
+        <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+
+        <!-- Место под слайдер диапазона цен. -->
+
+          <fieldset class="filter-group">
+            <legend class="filter-title">Цвет</legend>
+            <ul class="filter-list">
+              <li class="filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="black" checked>
+                  Черный
+                </label>
+              </li>
+              <li class="filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="white" checked>
+                  Белый
+                </label>
+              </li>
+              <li class="filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="blue">
+                  Синий
+                </label>
+              </li>
+              <li class="filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="red">
+                  Красный
+                </label>
+              </li>
+              <li class="filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="pink">
+                  Розовый
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </section>
+
+
+    </main>
+
+    <footer class="page-footer">
+      <section class="footer-contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <img class="footer-contacts-logo" alt="Логотип магазина «Девайс»." src="#">
+        <address class="footer-contacts-address">
+          <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+          <a class="footer-contacts-address-phone" href="tel:78128121212">Тел.: +7 (812) 812-12-12</a>
+        </address>
+      </section>
+
+      <section class="footer-navigation">
+        <h2 class="visually-hidden">Навигация по сайту</h2>
+        <ul class="footer-navigation-list">
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Доставка</a>
+          </li>
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Гарантия</a>
+          </li>
+          <li class="footer-navigation-item">
+            <a class="footer-navigation-link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="footer-social">
+        <h2 class="visually-hidden">Мы в социальных сетях</h2>
+        <ul class="footer-social-list">
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://t.me/htmlacademy">
+              <span class="visually-hidden">Telegram</span>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://www.youtube.com/user/htmlacademyru">
+              <span class="visually-hidden">Youtube</span>
+            </a>
+          </li>
+          <li class="footer-social-item">
+            <a class="button social-button" href="https://twitter.com/htmlacademy_ru">
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+        </ul>
+        <a class="footer-developer" href="https://htmlacademy.ru/">
+          <img class="footer-developer-logo" alt="Сделано в .html Academy" src="#">
+        </a>
+      </section>
+
+    </footer>
+
+
+
+
+
+
+  </body>
+</html>
