@@ -9,7 +9,7 @@
     <header class="page-header">
       <nav class="navigation">
         <a class="navigation-logo">
-          <img class="page-header-logo" alt="Логотип магазина «Девайс»." src="#">
+          <img class="page-header-logo" src="images/logo-header.svg" width="145" height="36" alt="Логотип магазина «Девайс».">
         </a>
         <form action="https://echo.htmlacademy.ru/" method="get">
           <label for="search" class="visually-hidden">Поиск по сайту</label>
@@ -18,21 +18,20 @@
         </form>
         <ul class="navigation-list navigation-user">
           <li class="navigation-item">
-            <a class="navigation-link" href="#">Войти</a>
-          </li>
-
-            <!-- На странице каталога здесь присутствует кнопка «Выйти»,
-            но на главной её нет, потому что вход не выполнен. Как я понимаю,
-            при выполненном входе кнопка "Войти" меняется на кнопку личного
-            кабинета и рядом добавляется кнопка «Выйти», то есть код страницы
-            немного изменяется и для «чистой» главной и главной после входа он
-            будет разной, поэтому добавлять сюда кнопку «Выйти» я не стал. -->
-
-          <li class="navigation-item">
-            <a class="navigation-link" href="#">Сравнить</a>
+            <a class="navigation-link" href="#">
+              <span class="navigation-profile">Войти</span>
+            </a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="#">Корзина</a>
+            <a class="navigation-link" href="#">
+              <span class="navigation-compare">Сравнить</span>
+            </a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="#">
+              <span class="notification-badge">2</span>
+              <span class="navigation-cart">Корзина</span>
+            </a>
           </li>
         </ul>
         <ul class="navigation-list">
@@ -44,11 +43,6 @@
               <span class="visually-hidden">Кнопка «Каталог товаров»</span>
             </a>
           </li>
-
-          <!-- Сомневаюсь, нужна ли тут ссылка или кнопка. С одной стороны,
-          это интерактив на странице, но, если js не работает, то она должна
-          вести в какой-то каталог. Поэтому дал ссылку. -->
-
           <li class="navigation-item">
             <a class="navigation-link" href="#">Доставка</a>
           </li>
@@ -89,7 +83,8 @@
         <h2 class="visually-hidden">Избранные товары</h2>
         <ol class="list-slider">
           <li class="list-item">
-            <img class="slider-image" src="#" alt="Квадрокоптер с лазером.">
+            <span class="list-number">01</span>
+            <img class="slider-image" src="/pictures/index/killer-drone.png" width="560" height="560" alt="Квадрокоптер с лазером.">
             <h2 class="slider-header">Порхает как бабочка, жалит как пчела!</h2>
             <p class="slider-text">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
             </p>
@@ -107,7 +102,8 @@
             </table>
           </li>
           <li class="list-item">
-            <img class="slider-image" src="#" alt="Умный фитнес-браслет.">
+            <span class="list-number">02</span>
+            <img class="slider-image" src="pictures/index/watch.png" width="560" height="560" alt="Умный фитнес-браслет.">
             <h2 class="slider-header">Худеем правильно!</h2>
             <p class="slider-text">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
             </p>
@@ -121,8 +117,9 @@
             </table>
           </li>
           <li class="list-item">
-            <img class="slider-image" src="#" alt="Восьмиметровая селфи-палка.">
-            <h2 class="slider-header">Делай селфи, как Бен Стиллер! </h2>
+            <span class="list-number">03</span>
+            <img class="slider-image" src="pictures/index/monopod-ben.png" width="560" height="560" alt="Восьмиметровая селфи-палка.">
+            <h2 class="slider-header">Делай селфи, как Бен Стиллер!</h2>
             <p class="slider-text">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.
             </p>
             <a class="button" href="#">Подробнее</a>
@@ -173,37 +170,40 @@
         <ul class="product-categories-list">
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="#">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-ar.svg" width="97" height="55" alt="">
               <h3 class="product-categories-title">Виртуальная реальность</h3>
             </a>
           </li>
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="catalog.html">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-monopod.svg" width="86" height="117" alt="">
               <h3 class="product-categories-title">Моноподы для селфи</h3>
             </a>
           </li>
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="#">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-action-camera.svg" width="71" height="87" alt="">
               <h3 class="product-categories-title">Экшн-камеры</h3>
             </a>
           </li>
+
+          <!-- В макете для экше-камеры указан неправильный значок, взял из стайлгайда. -->
+
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="#">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-bracelet.svg" width="107" height="65" alt="">
               <h3 class="product-categories-title">Фитнес-браслеты</h3>
             </a>
           </li>
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="#">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-watch.svg" width="56" height="98" alt="">
               <h3 class="product-categories-title">Умные часы</h3>
             </a>
           </li>
           <li class="product-categories-list-item">
             <a class="product-categories-link" href="#">
-              <img class="product-categories-image" src="#" alt="">
+              <img class="product-categories-image" src="images/menu-drone.svg" width="132" height="69" alt="">
               <h3 class="product-categories-title">Квадрокоптеры</h3>
             </a>
           </li>
@@ -225,36 +225,29 @@
         </ul>
       </section>
 
-      <!-- Не до конца уверен, как будет выглядеть анимация данных кнопок,
-        поэтому поставил побольше классов. Первый вроде как одинаков
-        для всех кнопок (за парой исключений), а остальные под это меню. -->
-
       <section class="advantage">
         <h2 class="advantage-header">Доставка</h2>
         <p class="advantage-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
-        <img class="advantage-image" src="#" alt="Доставка.">
+        <img class="advantage-image" src="images/delivery.svg" width="136" height="164" alt="Доставка.">
       </section>
 
       <section class="advantage">
         <h2 class="advantage-header">Гарантия</h2>
         <p class="advantage-description">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.
           Товар, не дом, конечно же.</p>
-        <img class="advantage-image" src="#" alt="Гарантия.">
+        <img class="advantage-image" src="images/guarantee.svg" width="171" height="195" alt="Гарантия.">
       </section>
 
       <section class="advantage">
         <h2 class="advantage-header">Кредит</h2>
         <p class="advantage-description">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
-        <img class="advantage-image" src="#" alt="Кредит.">
+        <img class="advantage-image" src="images/credit.svg" width="156" height="188" alt="Кредит.">
       </section>
 
       <section class="rare-item-order">
         <h2 class="visually-hidden">Заказ редкого товара</h2>
         <a class="button rare-item-order-button" href="#">Доставим редкий товар под заказ</a>
       </section>
-
-      <!-- Если я всё правильно понял, значок i справа — псевдоэлемент,
-        а не кнопка. В стайлгайде его нет.-->
 
       <section class="about">
         <h2 class="about-title">О нас</h2>
@@ -314,7 +307,7 @@
       <section class="footer-contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <a class="footer-logo">
-          <img class="footer-contacts-logo" alt="Логотип магазина «Девайс»." src="#">
+          <img class="footer-contacts-logo" src="images/logo-footer.svg" width="145" height="36" alt="Логотип магазина «Девайс».">
         </a>
         <address class="footer-contacts-address">
           <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
@@ -357,7 +350,7 @@
           </li>
         </ul>
         <a class="footer-developer" href="https://htmlacademy.ru/">
-          <img class="footer-developer-logo" alt="Сделано в .html Academy" src="#">
+          <img class="footer-developer-logo" src="images/html-academy.svg" width="115" height="33" alt="Сделано в .html Academy">
         </a>
       </section>
 
