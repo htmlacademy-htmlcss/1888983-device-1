@@ -207,3 +207,51 @@ body {
 .newsletter {
   background-color: #f0f0f0;
 }
+
+.newsletter-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.newsletter-text,
+.newsletter-free {
+  color: #444444;
+}
+
+.page-footer {
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer-contacts-address {
+  font-style: normal;
+}
+
+.footer-contacts-address-phone {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-navigation-list {
+  list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+
+.footer-navigation-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-social-list {
+  list-style-type: none;
+}
+
+.social-button {
+  color: inherit;
+}
