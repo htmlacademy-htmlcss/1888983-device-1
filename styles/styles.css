@@ -40,9 +40,9 @@ body {
   color: #000000;
 }
 
-.visually-hidden {
+/*.visually-hidden {
   visibility: hidden;
-}
+} — для наглядности пока закомментировал*/
 
 .page-header {
   color: #000000;
@@ -88,6 +88,11 @@ body {
   line-height: 18px;
 }
 
+.main-index {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 .slider {
   list-style-type: none;
 }
@@ -106,10 +111,99 @@ body {
   font-size: 50px;
 }
 
+.slider-text {
+  color: #444444;
+}
+
 .specs-value {
   font-size: 36px;
 }
 
 .specs-option {
   font-size: 16px;
+}
+
+.product-categories-list {
+  list-style-type: none;}
+
+.product-categories-link {
+  font-family: "Raleway", sans-serif;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.product-categories-image {
+  background-color: #FFE17F;
+}
+
+.advantages-menu-list {
+  list-style-type: none;
+}
+
+/* Я так понимаю, мы пока не проходили обнуление оформления кнопок.
+Текст вроде бы выглядит правильно. */
+
+.advantage-header {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.advantage-description {
+  color: #444444;
+}
+
+.rare-item-order {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #f0f0f0;
+}
+
+.about-title,
+.contacts-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.about-text,
+.contacts-text {
+  color: #444444;
+}
+
+.about-list {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.contacts-subtitle {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contacts-address {
+  font-style: normal;
+  color: #444444;
+}
+
+.contacts-phone {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.contacts-schedule {
+  list-style-type: none;
+  color: #444444;
+}
+
+.newsletter {
+  background-color: #f0f0f0;
 }
