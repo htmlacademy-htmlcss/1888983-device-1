@@ -62,6 +62,10 @@ body {
   text-decoration: none;
 }
 
+.navigation-logout{
+  opacity: 0.3;
+}
+
 .notification-badge {
   font-size: 14px;
   background-color: #ffffff;
@@ -90,6 +94,10 @@ body {
 }
 
 .slider {
+  list-style-type: none;
+}
+
+.slider-pagination {
   list-style-type: none;
 }
 
@@ -255,4 +263,109 @@ body {
 
 .social-button {
   color: inherit;
+}
+
+.main-inner {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.catalog-products {
+  background-color: #ffffff;
+}
+
+.inner-header-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.breadcrumbs-link {
+  line-height: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.breadcrumbs {
+  list-style-image: url(../icons/breadcrumbs-arrow.svg);
+}
+
+.breadcrumbs-item:nth-child(1) {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.filter-header,
+.sorter-header {
+  font-family: "Raleway", sans-serif;
+  line-height: normal;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.filter-title {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.filter-list {
+  list-style-type: none;
+}
+
+.control-input {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.product-list {
+  list-style-type: none;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card-title {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.product-card-price {
+  line-height: normal;
+  color: #444444;
+  font-weight: 400;
+}
+
+.pagination,
+.pagination-button {
+  list-style-type: none;
+  background-color: #f0f0f0;
+}
+
+.pagination-link,
+.pagination-other {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #444444;
+  opacity: 0.3;
+}
+
+.pagination-prev,
+.pagination-next {
+  font-family: "Railway", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.pagination-next,
+.pagination-current {
+  opacity: 1;
 }
