@@ -1,0 +1,371 @@
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/raleway/raleway-800.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/rubik/rubik-400.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/rubik/rubik-700.woff2) format("woff2");
+  font-display: swap;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.button {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+
+/*.visually-hidden {
+  visibility: hidden;
+} — для наглядности пока закомментировал*/
+
+.page-header {
+  color: #000000;
+  background-color: #FFE17F;
+}
+
+.navigation-search,
+.navigation-search-button {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.navigation-link {
+  color: #000000;
+  text-align: left;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.navigation-logout{
+  opacity: 0.3;
+}
+
+.notification-badge {
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.navigation-main {
+  font-family: "Raleway", sans-serif;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  vertical-align: top;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.catalog {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.main-index {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.slider {
+  list-style-type: none;
+}
+
+.slider-pagination {
+  list-style-type: none;
+}
+
+.slider-number {
+  background-color: #FFE17F;
+  color: #ffffff;
+  font-size: 180px;
+  text-align: right;
+  font-weight: 700;
+}
+
+.slider-header {
+  font-family: "Raleway", sans-serif;
+  line-height: 50px;
+  font-size: 50px;
+}
+
+.slider-text {
+  color: #444444;
+}
+
+.specs-value {
+  font-size: 36px;
+}
+
+.specs-option {
+  font-size: 16px;
+}
+
+.product-categories-list {
+  list-style-type: none;}
+
+.product-categories-link {
+  font-family: "Raleway", sans-serif;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.product-categories-image {
+  background-color: #FFE17F;
+}
+
+.advantages-block {
+  background-color: #f0f0f0;
+}
+
+.advantages-menu,
+.advantages {
+  list-style-type: none;
+}
+
+/* Я так понимаю, мы пока не проходили обнуление оформления кнопок.
+Текст вроде бы выглядит правильно. */
+
+.advantages-header {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.advantages-description {
+  color: #444444;
+}
+
+.rare-item-order {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #f0f0f0;
+}
+
+.about-title,
+.contacts-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.about-text,
+.contacts-text {
+  color: #444444;
+}
+
+.about-list {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.contacts-subtitle {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contacts-address {
+  font-style: normal;
+  color: #444444;
+}
+
+.contacts-phone {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.contacts-schedule {
+  list-style-type: none;
+  color: #444444;
+}
+
+.newsletter {
+  background-color: #f0f0f0;
+}
+
+.newsletter-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.newsletter-text,
+.newsletter-free {
+  color: #444444;
+}
+
+.page-footer {
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer-contacts-address {
+  font-style: normal;
+}
+
+.footer-contacts-address-phone {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-navigation-list {
+  list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+
+.footer-navigation-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-social-list {
+  list-style-type: none;
+}
+
+.social-button {
+  color: inherit;
+}
+
+.main-inner {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.catalog-products {
+  background-color: #ffffff;
+}
+
+.inner-header-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.breadcrumbs-link {
+  line-height: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.breadcrumbs {
+  list-style-image: url(../icons/breadcrumbs-arrow.svg);
+}
+
+.breadcrumbs-item:nth-child(1) {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.filter-header,
+.sorter-header {
+  font-family: "Raleway", sans-serif;
+  line-height: normal;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.filter-title {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.filter-list {
+  list-style-type: none;
+}
+
+.control-input {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.product-list {
+  list-style-type: none;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card-title {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.36px;
+}
+
+.product-card-price {
+  line-height: normal;
+  color: #444444;
+  font-weight: 400;
+}
+
+.pagination,
+.pagination-button {
+  list-style-type: none;
+  background-color: #f0f0f0;
+}
+
+.pagination-link,
+.pagination-other {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #444444;
+  opacity: 0.3;
+}
+
+.pagination-prev,
+.pagination-next {
+  font-family: "Railway", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.pagination-next,
+.pagination-current {
+  opacity: 1;
+}
