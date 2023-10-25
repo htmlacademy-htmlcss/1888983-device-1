@@ -129,13 +129,32 @@ body {
   background-color: #ffffff;
 }
 
+.navigation-bottom-container {
+  display: flex;
+}
+
+.navigation-catalog {
+  width: 293px;
+  margin-right: auto;
+}
+
 .navigation-main {
+  display: flex;
+  width: 471px;
+  justify-content: space-between;
+}
+
+.navigation-main,
+.navigation-catalog {
   font-family: "Raleway", sans-serif;
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 3.6px;
   vertical-align: top;
 }
+
+/* Контакты в меню почему-то не прижимаются к правому краю,
+не понимаю, в чём проблема. */
 
 .navigation-list {
   list-style-type: none;
@@ -144,6 +163,8 @@ body {
 }
 
 .catalog {
+  display: flex;
+  width: 700px;
   font-size: 16px;
   line-height: 18px;
 }
