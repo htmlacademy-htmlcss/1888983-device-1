@@ -339,6 +339,17 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  padding: 0;
+}
+
+.about-wrapper {
+  display: flex;
+  width: 1160px;
+  justify-content: space-between;
+}
+
+.about {
+  width: 520px;
 }
 
 .contacts-subtitle {
@@ -362,14 +373,25 @@ body {
   color: #444444;
 }
 
+.contacts {
+  width: 532px;
+}
+
 .newsletter {
   background-color: #f0f0f0;
+  width: 1160px;
+}
+
+.newsletter-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .newsletter-title {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
+  width: 348px;
 }
 
 .newsletter-text,
@@ -377,20 +399,57 @@ body {
   color: #444444;
 }
 
+.newsletter-text {
+  width: 560px;
+}
+
+.newsletter-form-wrapper {
+  display: flex;
+  width: 1160px;
+}
+
+.newsletter-field {
+  width: 557px;
+}
+
+.newsletter-button {
+  width: 253px;
+}
+
+.newsletter-free {
+  width: 160px;
+  margin-left: auto;
+}
+
 .page-footer {
   background-color: #444444;
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
+  width: 1160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-contacts-address {
+  display: flex;
+  justify-content: space-between;
   font-style: normal;
+}
+
+.footer-contacts-address-text {
+  width: 239px;
 }
 
 .footer-contacts-address-phone {
   color: #ffffff;
   text-decoration: underline;
+  width: 174px;
 }
 
 .footer-navigation-list {
@@ -399,6 +458,10 @@ body {
   line-height: normal;
   letter-spacing: 3.6px;
   text-transform: uppercase;
+  display: flex;
+  margin: 0 auto;
+  width: 444px;
+  justify-content: space-between;
 }
 
 .footer-navigation-link {
@@ -406,8 +469,16 @@ body {
   text-decoration: none;
 }
 
+.footer-social {
+  display: flex;
+}
+
 .footer-social-list {
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
+  margin-left: 645px;
+  margin-right: auto;
 }
 
 .social-button {
