@@ -138,6 +138,9 @@ body {
   margin-right: auto;
 }
 
+/* Здесь navigation-catalog почему-то отталкивает main, но main,
+если поставить margin-left: auto; каталог двигать отказывается. */
+
 .navigation-main {
   display: flex;
   width: 471px;
@@ -174,31 +177,70 @@ body {
   background-color: #ffffff;
 }
 
+.featured {
+  width: 1160px;
+}
+
 .slider {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-item {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-image {
+  margin: 0;
+  width: 560px;
+  margin-right: auto;
+}
+
+.slider-right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 560px;
 }
 
 .slider-pagination {
   list-style-type: none;
+  display: flex;
+  margin: 0 682px;
+  justify-content: space-between;
 }
 
 .slider-number {
+  align-self: flex-end;
   background-color: #FFE17F;
   color: #ffffff;
   font-size: 180px;
   text-align: right;
   font-weight: 700;
+  height: 135px;
+  margin-right: 49px;
+  width: 250px;
 }
+
+/* Номер почему-то выходит за пределы бокса, такое чувство, что у него строка начинается посередине
+бокса. Не понял, как это решить. */
 
 .slider-header {
   font-family: "Raleway", sans-serif;
   line-height: 50px;
   font-size: 50px;
+  margin: 0;
 }
 
 .slider-text {
   color: #444444;
+  margin: 0;
 }
+
+/* Не пойму, как повернуть таблицу. */
 
 .specs-value {
   font-size: 36px;
@@ -209,7 +251,11 @@ body {
 }
 
 .product-categories-list {
-  list-style-type: none;}
+  list-style-type: none;
+  display: flex;
+  width: 1160px;
+  justify-content: space-between;
+}
 
 .product-categories-link {
   font-family: "Raleway", sans-serif;
@@ -219,12 +265,21 @@ body {
   text-decoration: none;
 }
 
+.product-categories-list-item {
+  height: 253px;
+  width: 160px;
+}
+
 .product-categories-image {
   background-color: #FFE17F;
+  height: 160px;
+  width: 160px;
 }
 
 .advantages-block {
   background-color: #f0f0f0;
+  display: flex;
+  width: 1160px;
 }
 
 .advantages-menu,
@@ -232,8 +287,20 @@ body {
   list-style-type: none;
 }
 
-/* Я так понимаю, мы пока не проходили обнуление оформления кнопок.
-Текст вроде бы выглядит правильно. */
+.advantages-menu {
+  width: 394px;
+}
+
+.advantages-item {
+  display: flex;
+  width: 730px;
+  margin-left: 116px;
+  justify-content: space-between;
+}
+
+.advantages-wrapper {
+  width: 452px;
+}
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
@@ -253,6 +320,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   background-color: #f0f0f0;
+  width: 1160px;
 }
 
 .about-title,
