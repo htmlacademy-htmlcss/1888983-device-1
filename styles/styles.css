@@ -40,6 +40,7 @@ body {
 
 .main-container {
   flex-grow: 1;
+  width: 1160px;
 }
 
 .button {
@@ -78,7 +79,7 @@ body {
   flex-direction: column;
   width: 1040px;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 0;
   padding: 5px 60px 0;
 }
 
@@ -98,6 +99,8 @@ body {
 .navigation-login {
   width: 230px;
   margin-left: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navigation-menu {
@@ -207,10 +210,14 @@ body {
 }
 
 .slider-pagination {
-  list-style-type: none;
   display: flex;
-  margin: 0 682px;
+  width: 76px;
+  margin: 0 auto;
   justify-content: space-between;
+}
+
+.slider-pagination-item {
+  width: 12px;
 }
 
 .slider-number {
@@ -223,10 +230,8 @@ body {
   height: 135px;
   margin-right: 49px;
   width: 250px;
+  line-height: 1;
 }
-
-/* Номер почему-то выходит за пределы бокса, такое чувство, что у него строка начинается посередине
-бокса. Не понял, как это решить. */
 
 .slider-header {
   font-family: "Raleway", sans-serif;
@@ -255,6 +260,8 @@ body {
   display: flex;
   width: 1160px;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .product-categories-link {
@@ -339,7 +346,6 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
-  padding: 0;
 }
 
 .about-wrapper {
@@ -444,6 +450,7 @@ body {
 
 .footer-contacts-address-text {
   width: 239px;
+  margin: 0;
 }
 
 .footer-contacts-address-phone {
@@ -486,8 +493,15 @@ body {
 }
 
 .main-inner {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #000000;
+  width: 1160px;
+}
+
+.inner-header {
+  width: 1080px;
+  margin-left: 60px;
+  margin-right: auto;
 }
 
 .catalog-products {
@@ -498,6 +512,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
+  padding: 0;
 }
 
 .breadcrumbs-link {
@@ -507,12 +522,34 @@ body {
 }
 
 .breadcrumbs {
-  list-style-image: url(../icons/breadcrumbs-arrow.svg);
+  list-style-image: url(../images/icons/breadcrumbs-arrow.svg);
+  display: flex;
+  width: 430px;
+  justify-content: space-between;
+  padding: 0;
 }
 
 .breadcrumbs-item:nth-child(1) {
   list-style-type: none;
   list-style-image: none;
+}
+
+.inner-wrapper {
+  background-color: #f0f0f0;
+  display: flex;
+}
+
+.filter {
+  width: 320px;
+}
+
+.inner-left-column {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.inner-right-column {
+  width: 840px;
 }
 
 .filter-header,
@@ -521,6 +558,7 @@ body {
   line-height: normal;
   letter-spacing: 3.2px;
   text-transform: uppercase;
+  font-size: 16px;
 }
 
 .filter-title {
@@ -531,15 +569,27 @@ body {
 
 .filter-list {
   list-style-type: none;
+  padding: 0;
 }
 
-.control-input {
+.control {
   font-size: 16px;
   line-height: 20px;
 }
 
+.sorter {
+  display: flex;
+  width: 760px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
 .product-list {
+  display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
+  justify-content: space-evenly;
+  padding: 0;
 }
 
 .product-card-link {
@@ -559,10 +609,26 @@ body {
   font-weight: 400;
 }
 
-.pagination,
-.pagination-button {
-  list-style-type: none;
+.pagination-more {
+  width: 760px;
+}
+
+/* Почему-то не работает центровка с помощью margin: 0 auto. */
+
+.pagination-wrapper {
+  display: flex;
+  width: 760px;
+  margin: 0 auto;
+  justify-content: space-between;
   background-color: #f0f0f0;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  list-style: none;
 }
 
 .pagination-link,
