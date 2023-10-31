@@ -134,15 +134,12 @@ body {
 
 .navigation-bottom-container {
   display: flex;
+  justify-content: space-between;
 }
 
 .navigation-catalog {
   width: 293px;
-  margin-right: auto;
 }
-
-/* Здесь navigation-catalog почему-то отталкивает main, но main,
-если поставить margin-left: auto; каталог двигать отказывается. */
 
 .navigation-main {
   display: flex;
@@ -151,7 +148,7 @@ body {
 }
 
 .navigation-main,
-.navigation-catalog {
+.catalog-header {
   font-family: "Raleway", sans-serif;
   line-height: normal;
   text-transform: uppercase;
@@ -205,8 +202,8 @@ body {
 .slider-right-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 560px;
+  gap: 50px;
 }
 
 .slider-pagination {
@@ -228,7 +225,7 @@ body {
   text-align: right;
   font-weight: 700;
   height: 135px;
-  margin-right: 49px;
+  margin-right: 50px;
   width: 250px;
   line-height: 1;
 }
@@ -244,8 +241,6 @@ body {
   color: #444444;
   margin: 0;
 }
-
-/* Не пойму, как повернуть таблицу. */
 
 .specs-value {
   font-size: 36px;
@@ -585,11 +580,11 @@ body {
 }
 
 .product-list {
-  display: flex;
-  flex-wrap: wrap;
   list-style-type: none;
-  justify-content: space-evenly;
-  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 70px 40px 0;
+  gap: 44px 40px;
 }
 
 .product-card-link {
@@ -610,7 +605,9 @@ body {
 }
 
 .pagination-more {
+  display: block;
   width: 760px;
+  margin: 0 auto;
 }
 
 /* Почему-то не работает центровка с помощью margin: 0 auto. */
@@ -654,4 +651,8 @@ body {
 .pagination-next,
 .pagination-current {
   opacity: 1;
+}
+
+.pagination-button {
+  padding: 25px;
 }
