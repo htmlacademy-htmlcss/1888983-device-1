@@ -497,6 +497,7 @@ body {
 .newsletter-form-wrapper {
   display: flex;
   width: 1160px;
+  padding-bottom: 56px;
 }
 
 .newsletter-form {
@@ -524,6 +525,11 @@ body {
   width: 1160px;
   display: flex;
   flex-direction: column;
+  padding: 62px 0;
+}
+
+.footer-logo {
+  padding-bottom: 35px;
 }
 
 .footer-contacts {
@@ -555,9 +561,15 @@ body {
   letter-spacing: 3.6px;
   text-transform: uppercase;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
+  padding: 0;
   width: 444px;
-  justify-content: space-between;
+  margin-bottom: 62px;
+}
+
+.footer-navigation-item:not(:nth-child(3n)) {
+  margin-right: 35px;
 }
 
 .footer-navigation-link {
@@ -571,14 +583,25 @@ body {
 
 .footer-social-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   list-style-type: none;
-  margin-left: 645px;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 0;
+  width: 150px;
 }
 
 .social-button {
+  display: block;
   color: inherit;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  outline: 1px solid wheat;
+  margin-bottom: 15px;
+}
+
+.footer-social-item:not(:nth-child(3n)) {
+  margin-right: 15px;
 }
 
 .main-inner {
