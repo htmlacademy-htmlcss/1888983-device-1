@@ -51,9 +51,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
+  padding: 10px 5px;
 }
-
-/* элементы, которые скрыты, очень мешают, поэтому я их убрал */
 
 .visually-hidden {
   position: absolute;
@@ -72,6 +71,7 @@ body {
   width: 1160px;
   color: #000000;
   background-color: #FFE17F;
+  margin-top: 20px;
 }
 
 .navigation {
@@ -80,34 +80,45 @@ body {
   width: 1040px;
   justify-content: space-between;
   margin: 0;
-  padding: 5px 60px 0;
+  padding: 0 60px;
+}
+
+.navigation-logo {
+  display: block;
+  margin-bottom: 30px;
 }
 
 .navigation-middle-container {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .navigation-search {
   width: 360px;
+  height: 40px;
 }
 
 .navigation-search-button {
   width: 160px;
+  height: 40px;
 }
 
 .navigation-login {
   width: 230px;
-  margin-left: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
 .navigation-menu {
   width: 240px;
   display: flex;
-  margin-left: auto;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .navigation-search,
@@ -117,9 +128,9 @@ body {
 }
 
 .navigation-link {
+  display: block;
   color: #000000;
   text-align: left;
-  vertical-align: middle;
   text-decoration: none;
 }
 
@@ -134,17 +145,33 @@ body {
 
 .navigation-bottom-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
+/* Здесь часть хедера находит на слайдер, поэтому пока что не ставил марджин. */
+
 .navigation-catalog {
-  width: 293px;
+  width: 290px;
+  margin-right: auto;
+}
+
+.navigation-link {
+  display: block;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .navigation-main {
   display: flex;
-  width: 471px;
-  justify-content: space-between;
+  height: auto;
+  width: 470px;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+.navigation-main .navigation-item:not(:nth-child(3n)) {
+  max-width: 125px;
+  margin-right: 45px;
 }
 
 .navigation-main,
@@ -153,7 +180,6 @@ body {
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 3.6px;
-  vertical-align: top;
 }
 
 /* Контакты в меню почему-то не прижимаются к правому краю,
@@ -179,6 +205,7 @@ body {
 
 .featured {
   width: 1160px;
+  margin-bottom: 210px;
 }
 
 .slider {
@@ -203,14 +230,15 @@ body {
   display: flex;
   flex-direction: column;
   width: 560px;
-  gap: 50px;
 }
 
 .slider-pagination {
   display: flex;
   width: 76px;
+  height: 12px;
   margin: 0 auto;
   justify-content: space-between;
+  list-style-type: none;
 }
 
 .slider-pagination-item {
@@ -235,15 +263,24 @@ body {
   line-height: 50px;
   font-size: 50px;
   margin: 0;
+  margin-bottom: 30px;
 }
 
 .slider-text {
   color: #444444;
   margin: 0;
+  margin-bottom: 50px;
+}
+
+.slider-right-column .button {
+  width: 220px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .specs-value {
   font-size: 36px;
+  font-weight: 400;
 }
 
 .specs-option {
@@ -609,8 +646,6 @@ body {
   width: 760px;
   margin: 0 auto;
 }
-
-/* Почему-то не работает центровка с помощью margin: 0 auto. */
 
 .pagination-wrapper {
   display: flex;
