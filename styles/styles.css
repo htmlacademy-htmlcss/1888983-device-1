@@ -51,9 +51,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
+  padding: 10px 5px;
 }
-
-/* элементы, которые скрыты, очень мешают, поэтому я их убрал */
 
 .visually-hidden {
   position: absolute;
@@ -72,6 +71,7 @@ body {
   width: 1160px;
   color: #000000;
   background-color: #FFE17F;
+  margin-top: 20px;
 }
 
 .navigation {
@@ -80,34 +80,45 @@ body {
   width: 1040px;
   justify-content: space-between;
   margin: 0;
-  padding: 5px 60px 0;
+  padding: 0 60px;
+}
+
+.navigation-logo {
+  display: block;
+  margin-bottom: 30px;
 }
 
 .navigation-middle-container {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .navigation-search {
   width: 360px;
+  height: 40px;
 }
 
 .navigation-search-button {
   width: 160px;
+  height: 40px;
 }
 
 .navigation-login {
   width: 230px;
-  margin-left: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
 .navigation-menu {
   width: 240px;
   display: flex;
-  margin-left: auto;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .navigation-search,
@@ -117,9 +128,9 @@ body {
 }
 
 .navigation-link {
+  display: block;
   color: #000000;
   text-align: left;
-  vertical-align: middle;
   text-decoration: none;
 }
 
@@ -134,17 +145,33 @@ body {
 
 .navigation-bottom-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
+/* Здесь часть хедера находит на слайдер, поэтому пока что не ставил марджин. */
+
 .navigation-catalog {
-  width: 293px;
+  width: 290px;
+  margin-right: auto;
+}
+
+.navigation-link {
+  display: block;
+  margin: 0;
+  padding: 15px 0;
 }
 
 .navigation-main {
   display: flex;
-  width: 471px;
-  justify-content: space-between;
+  height: auto;
+  width: 470px;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+.navigation-main .navigation-item:not(:nth-child(3n)) {
+  max-width: 125px;
+  margin-right: 45px;
 }
 
 .navigation-main,
@@ -153,7 +180,6 @@ body {
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 3.6px;
-  vertical-align: top;
 }
 
 /* Контакты в меню почему-то не прижимаются к правому краю,
@@ -179,6 +205,7 @@ body {
 
 .featured {
   width: 1160px;
+  margin-bottom: 210px;
 }
 
 .slider {
@@ -203,14 +230,15 @@ body {
   display: flex;
   flex-direction: column;
   width: 560px;
-  gap: 50px;
 }
 
 .slider-pagination {
   display: flex;
   width: 76px;
+  height: 12px;
   margin: 0 auto;
   justify-content: space-between;
+  list-style-type: none;
 }
 
 .slider-pagination-item {
@@ -235,15 +263,24 @@ body {
   line-height: 50px;
   font-size: 50px;
   margin: 0;
+  margin-bottom: 30px;
 }
 
 .slider-text {
   color: #444444;
   margin: 0;
+  margin-bottom: 50px;
+}
+
+.slider-right-column .button {
+  width: 220px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .specs-value {
   font-size: 36px;
+  font-weight: 400;
 }
 
 .specs-option {
@@ -254,9 +291,9 @@ body {
   list-style-type: none;
   display: flex;
   width: 1160px;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
+  margin-bottom: 70px;
 }
 
 .product-categories-link {
@@ -267,51 +304,78 @@ body {
   text-decoration: none;
 }
 
-.product-categories-list-item {
+.product-categories-list-item:not(:last-child) {
   height: 253px;
   width: 160px;
+  margin: 0;
+  padding: 0;
+  margin-right: 40px;
 }
 
 .product-categories-image {
   background-color: #FFE17F;
   height: 160px;
   width: 160px;
+  margin-bottom: 33px;
+}
+
+.product-categories-title {
+  display: block;
+  margin: 0;
+  height: 60px;
 }
 
 .advantages-block {
   background-color: #f0f0f0;
   display: flex;
   width: 1160px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 70px;
 }
 
 .advantages-menu,
 .advantages {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages-menu {
-  width: 394px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 326px;
+}
+
+.advantages-menu-item:not(:last-child) {
+  margin-bottom: 35px;
 }
 
 .advantages-item {
-  display: flex;
+  box-sizing: border-box;
   width: 730px;
   margin-left: 116px;
+  margin-right: auto;
   justify-content: space-between;
+  padding: 72px 0;
 }
 
-.advantages-wrapper {
-  width: 452px;
-}
+/* Как мне кажется, картинки тут декоративные, поэтому убрал их из разметки. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 34px;
 }
 
 .advantages-description {
   color: #444444;
+  margin: 0;
+  max-width: 480px;
 }
 
 .rare-item-order {
@@ -322,7 +386,11 @@ body {
   text-align: center;
   text-transform: uppercase;
   background-color: #f0f0f0;
+  box-sizing: border-box;
   width: 1160px;
+  height: 100px;
+  padding: 40px 0;
+  margin-bottom: 70px;
 }
 
 .about-title,
@@ -330,23 +398,32 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
+  margin: 40px 0 48px;
+  padding: 0;
 }
 
 .about-text,
 .contacts-text {
   color: #444444;
+  margin: 0;
+  margin-bottom: 30px;
+  max-width: 500px;
 }
 
 .about-list {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  margin-bottom: 30px;
+  padding-left: 37.5px;
+  list-style-type: none;
 }
 
 .about-wrapper {
   display: flex;
   width: 1160px;
   justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 .about {
@@ -356,11 +433,18 @@ body {
 .contacts-subtitle {
   font-weight: 700;
   font-size: 24px;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 .contacts-address {
   font-style: normal;
   color: #444444;
+  margin-bottom: 30px;
+}
+
+.contacts-address-text {
+  margin: 0;
 }
 
 .contacts-phone {
@@ -372,6 +456,9 @@ body {
 .contacts-schedule {
   list-style-type: none;
   color: #444444;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .contacts {
@@ -380,7 +467,7 @@ body {
 
 .newsletter {
   background-color: #f0f0f0;
-  width: 1160px;
+  margin: 0 auto;
 }
 
 .newsletter-wrapper {
@@ -393,6 +480,8 @@ body {
   font-size: 50px;
   line-height: 50px;
   width: 348px;
+  margin: 64px auto 144px 6px;
+  padding: 0;
 }
 
 .newsletter-text,
@@ -401,25 +490,31 @@ body {
 }
 
 .newsletter-text {
-  width: 560px;
+  max-width: 560px;
+  margin: 64px 0 144px;
 }
 
 .newsletter-form-wrapper {
   display: flex;
   width: 1160px;
+  padding-bottom: 56px;
 }
 
-.newsletter-field {
-  width: 557px;
+.newsletter-form {
+  width: 810px;
 }
 
 .newsletter-button {
-  width: 253px;
+  box-sizing: border-box;
+  width: 250px;
+  padding: 18px 39px;
 }
 
 .newsletter-free {
   width: 160px;
   margin-left: auto;
+  text-align: right;
+  padding: 13.5px 0;
 }
 
 .page-footer {
@@ -430,6 +525,11 @@ body {
   width: 1160px;
   display: flex;
   flex-direction: column;
+  padding: 62px 0;
+}
+
+.footer-logo {
+  padding-bottom: 35px;
 }
 
 .footer-contacts {
@@ -461,9 +561,15 @@ body {
   letter-spacing: 3.6px;
   text-transform: uppercase;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
+  padding: 0;
   width: 444px;
-  justify-content: space-between;
+  margin-bottom: 62px;
+}
+
+.footer-navigation-item:not(:nth-child(3n)) {
+  margin-right: 35px;
 }
 
 .footer-navigation-link {
@@ -477,14 +583,25 @@ body {
 
 .footer-social-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   list-style-type: none;
-  margin-left: 645px;
-  margin-right: auto;
+  margin: 0 auto;
+  padding: 0;
+  width: 150px;
 }
 
 .social-button {
+  display: block;
   color: inherit;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  outline: 1px solid wheat;
+  margin-bottom: 15px;
+}
+
+.footer-social-item:not(:nth-child(3n)) {
+  margin-right: 15px;
 }
 
 .main-inner {
@@ -495,18 +612,26 @@ body {
 
 .inner-header {
   width: 1080px;
-  margin-left: 60px;
-  margin-right: auto;
+  margin: 35px auto 34px 60px;
 }
 
 .catalog-products {
   background-color: #ffffff;
+  padding-bottom: 78px;
 }
 
 .inner-header-title {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.breadcrumbs {
+  list-style-type: none;
+  display: flex;
   padding: 0;
 }
 
@@ -514,19 +639,7 @@ body {
   line-height: 20px;
   text-decoration: none;
   color: #000000;
-}
-
-.breadcrumbs {
-  list-style-image: url(../images/icons/breadcrumbs-arrow.svg);
-  display: flex;
-  width: 430px;
-  justify-content: space-between;
-  padding: 0;
-}
-
-.breadcrumbs-item:nth-child(1) {
-  list-style-type: none;
-  list-style-image: none;
+  margin-right: 36px;
 }
 
 .inner-wrapper {
@@ -539,8 +652,8 @@ body {
 }
 
 .inner-left-column {
-  width: 200px;
-  margin: 0 auto;
+  width: 260px;
+  margin-left: 60px;
 }
 
 .inner-right-column {
@@ -554,12 +667,23 @@ body {
   letter-spacing: 3.2px;
   text-transform: uppercase;
   font-size: 16px;
+  margin: 0;
+  padding: 25px 0;
+}
+
+.filter-header {
+  margin-bottom: 35px;
 }
 
 .filter-title {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+}
+
+.filter-title {
+  margin: 0;
+  padding: 0;
 }
 
 .filter-list {
@@ -576,13 +700,32 @@ body {
   display: flex;
   width: 760px;
   margin: 0 auto;
-  justify-content: space-between;
+}
+
+.sorter-header {
+  margin-right: auto;
+}
+
+.select-control {
+  align-self: center;
+  margin-right: auto;
+}
+
+.sorter .button {
+  align-self: center;
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
+  outline: 1px solid wheat;
 }
 
 .product-list {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 0;
+  margin-bottom: 44px;
   padding: 70px 40px 0;
   gap: 44px 40px;
 }
@@ -592,10 +735,15 @@ body {
   color: inherit;
 }
 
+.product-card-image {
+  margin-bottom: 32px;
+}
+
 .product-card-title {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  margin: 0;
 }
 
 .product-card-price {
@@ -607,10 +755,9 @@ body {
 .pagination-more {
   display: block;
   width: 760px;
-  margin: 0 auto;
+  margin: 0 auto 44px;
+  padding: 18px 39px;
 }
-
-/* Почему-то не работает центровка с помощью margin: 0 auto. */
 
 .pagination-wrapper {
   display: flex;
@@ -624,17 +771,23 @@ body {
 .pagination {
   display: flex;
   width: 200px;
-  justify-content: space-between;
-  list-style: none;
+  list-style-type: none;
 }
 
 .pagination-link,
 .pagination-other {
+  display: block;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  text-align: center;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
   color: #444444;
   opacity: 0.3;
+  outline: 1px solid red;
 }
 
 .pagination-prev,
@@ -645,14 +798,15 @@ body {
   letter-spacing: 3.6px;
   line-height: normal;
   text-transform: uppercase;
+  text-decoration: none;
   color: #000000;
+  opacity: 0.3;
+  display: block;
+  box-sizing: border-box;
+  padding: 25px;
 }
 
 .pagination-next,
 .pagination-current {
   opacity: 1;
-}
-
-.pagination-button {
-  padding: 25px;
 }
