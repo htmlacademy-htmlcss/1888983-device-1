@@ -95,14 +95,27 @@ body {
   margin-bottom: 30px;
 }
 
+.search-field {
+  display: flex;
+}
+
+.navigation-search,
+.navigation-search-button {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .navigation-search {
   width: 360px;
-  height: 40px;
+  padding: 0;
 }
 
 .navigation-search-button {
   width: 160px;
   height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .navigation-login {
@@ -121,17 +134,12 @@ body {
   flex-wrap: wrap;
 }
 
-.navigation-search,
-.navigation-search-button {
-  font-size: 16px;
-  line-height: 20px;
-}
-
 .navigation-link {
   display: block;
   color: #000000;
   text-align: left;
   text-decoration: none;
+  margin: 0;
 }
 
 .navigation-logout {
@@ -155,22 +163,16 @@ body {
   margin-right: auto;
 }
 
-.navigation-link {
-  display: block;
-  margin: 0;
-  padding: 15px 0;
-}
-
 .navigation-main {
   display: flex;
   height: auto;
-  width: 470px;
+  width: 475px;
   flex-wrap: wrap;
   align-self: flex-start;
 }
 
 .navigation-main .navigation-item:not(:nth-child(3n)) {
-  max-width: 125px;
+  min-width: 121px;
   margin-right: 45px;
 }
 
@@ -180,6 +182,14 @@ body {
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 3.6px;
+}
+
+.catalog-header {
+  padding: 15px 0;
+}
+
+.navigation-main a {
+  padding: 15px 0;
 }
 
 /* Контакты в меню почему-то не прижимаются к правому краю,
@@ -276,6 +286,10 @@ body {
   width: 220px;
   margin-bottom: 50px;
   text-align: center;
+}
+
+.slider-specs {
+  margin-right: auto;
 }
 
 .specs-value {
@@ -501,7 +515,12 @@ body {
 }
 
 .newsletter-form {
+  display: flex;
   width: 810px;
+}
+
+.newsletter-field {
+  width: 100%;
 }
 
 .newsletter-button {
@@ -525,7 +544,7 @@ body {
   width: 1160px;
   display: flex;
   flex-direction: column;
-  padding: 62px 0;
+  padding: 47px 0;
 }
 
 .footer-logo {
@@ -730,12 +749,18 @@ body {
   gap: 44px 40px;
 }
 
+.product-card {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+
 .product-card-link {
   text-decoration: none;
   color: inherit;
 }
 
-.product-card-image {
+.product-card-image-link {
+  grid-column: 1 / -1;
   margin-bottom: 32px;
 }
 
@@ -750,6 +775,7 @@ body {
   line-height: normal;
   color: #444444;
   font-weight: 400;
+  justify-self: end;
 }
 
 .pagination-more {
@@ -787,7 +813,6 @@ body {
   text-decoration: none;
   color: #444444;
   opacity: 0.3;
-  outline: 1px solid red;
 }
 
 .pagination-prev,
