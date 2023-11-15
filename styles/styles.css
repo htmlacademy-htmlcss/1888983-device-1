@@ -38,9 +38,8 @@ body {
   color: #000000;
 }
 
-.main-container {
+.main-index {
   flex-grow: 1;
-  width: 1160px;
 }
 
 .button {
@@ -71,6 +70,7 @@ body {
   width: 1160px;
   color: #000000;
   background-color: #FFE17F;
+  margin: 0 auto;
   margin-top: 20px;
 }
 
@@ -95,14 +95,27 @@ body {
   margin-bottom: 30px;
 }
 
+.search-field {
+  display: flex;
+}
+
+.navigation-search,
+.navigation-search-button {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .navigation-search {
   width: 360px;
-  height: 40px;
+  padding: 0;
 }
 
 .navigation-search-button {
   width: 160px;
   height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .navigation-login {
@@ -121,17 +134,12 @@ body {
   flex-wrap: wrap;
 }
 
-.navigation-search,
-.navigation-search-button {
-  font-size: 16px;
-  line-height: 20px;
-}
-
 .navigation-link {
   display: block;
   color: #000000;
   text-align: left;
   text-decoration: none;
+  margin: 0;
 }
 
 .navigation-logout {
@@ -155,22 +163,16 @@ body {
   margin-right: auto;
 }
 
-.navigation-link {
-  display: block;
-  margin: 0;
-  padding: 15px 0;
-}
-
 .navigation-main {
   display: flex;
   height: auto;
-  width: 470px;
+  width: 475px;
   flex-wrap: wrap;
   align-self: flex-start;
 }
 
 .navigation-main .navigation-item:not(:nth-child(3n)) {
-  max-width: 125px;
+  min-width: 121px;
   margin-right: 45px;
 }
 
@@ -180,6 +182,14 @@ body {
   line-height: normal;
   text-transform: uppercase;
   letter-spacing: 3.6px;
+}
+
+.catalog-header {
+  padding: 15px 0;
+}
+
+.navigation-main a {
+  padding: 15px 0;
 }
 
 /* Контакты в меню почему-то не прижимаются к правому краю,
@@ -198,13 +208,14 @@ body {
   line-height: 18px;
 }
 
-.main-index {
+.main-wrapper {
+  width: 1160px;
   color: #000000;
   background-color: #ffffff;
+  margin: 0 auto;
 }
 
 .featured {
-  width: 1160px;
   margin-bottom: 210px;
 }
 
@@ -278,6 +289,10 @@ body {
   text-align: center;
 }
 
+.slider-specs {
+  margin-right: auto;
+}
+
 .specs-value {
   font-size: 36px;
   font-weight: 400;
@@ -327,9 +342,12 @@ body {
 
 .advantages-block {
   background-color: #f0f0f0;
+}
+
+.advantages-wrapper {
   display: flex;
   width: 1160px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   margin-bottom: 70px;
 }
@@ -467,12 +485,13 @@ body {
 
 .newsletter {
   background-color: #f0f0f0;
-  margin: 0 auto;
 }
 
 .newsletter-wrapper {
+  width: 1160px;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .newsletter-title {
@@ -498,10 +517,16 @@ body {
   display: flex;
   width: 1160px;
   padding-bottom: 56px;
+  margin: 0 auto;
 }
 
 .newsletter-form {
+  display: flex;
   width: 810px;
+}
+
+.newsletter-field {
+  width: 100%;
 }
 
 .newsletter-button {
@@ -519,39 +544,50 @@ body {
 
 .page-footer {
   background-color: #444444;
+}
+
+.page-footer-wrapper {
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
+  margin: 0 auto;
   width: 1160px;
-  display: flex;
-  flex-direction: column;
-  padding: 62px 0;
+  display: grid;
+  grid-template-columns: 240px 444px auto;
+  grid-template-rows: 36px 40px auto;
+  grid-template-areas:
+  "logo . ."
+  "address navigation tel"
+  ". social academy";
+  gap: 35px 119px;
+  padding: 62px 0 47px 0;
+  align-content: center;
 }
 
 .footer-logo {
-  padding-bottom: 35px;
-}
-
-.footer-contacts {
-  display: flex;
-  flex-direction: column;
+  grid-area: logo;
 }
 
 .footer-contacts-address {
-  display: flex;
-  justify-content: space-between;
   font-style: normal;
+  grid-area: address;
 }
 
 .footer-contacts-address-text {
-  width: 239px;
   margin: 0;
 }
 
-.footer-contacts-address-phone {
+.footer-contacts-phone {
+  grid-area: tel;
+}
+
+.footer-contacts-phone-link {
+  display: block;
   color: #ffffff;
   text-decoration: underline;
-  width: 174px;
+  font-style: normal;
+  text-align: right;
+  padding: 7px 0 13px;
 }
 
 .footer-navigation-list {
@@ -562,23 +598,21 @@ body {
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  width: 444px;
-  margin-bottom: 62px;
-}
-
-.footer-navigation-item:not(:nth-child(3n)) {
-  margin-right: 35px;
+  grid-area: navigation;
+  justify-content: space-between;
 }
 
 .footer-navigation-link {
+  display: block;
   color: inherit;
   text-decoration: none;
+  padding: 4px 0 15px;
 }
 
 .footer-social {
-  display: flex;
+  grid-area: social;
 }
 
 .footer-social-list {
@@ -587,6 +621,7 @@ body {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
+  padding-top: 12px;
   width: 150px;
 }
 
@@ -604,15 +639,28 @@ body {
   margin-right: 15px;
 }
 
+.footer-developer {
+  grid-area: academy;
+  justify-self: end;
+  align-self: center;
+}
+
+.footer-developer-logo {
+  display: flex;
+  padding: 10px 0;
+}
+
 .main-inner {
   background-color: #ffffff;
   color: #000000;
-  width: 1160px;
+  flex-grow: 1;
 }
 
 .inner-header {
-  width: 1080px;
-  margin: 35px auto 34px 60px;
+  width: 1160px;
+  margin: 0 auto;
+  padding: 35px 21px 34px 60px;
+  box-sizing: border-box;
 }
 
 .catalog-products {
@@ -633,6 +681,7 @@ body {
   list-style-type: none;
   display: flex;
   padding: 0;
+  margin: 0;
 }
 
 .breadcrumbs-link {
@@ -642,8 +691,13 @@ body {
   margin-right: 36px;
 }
 
-.inner-wrapper {
+.grey-wrapper {
   background-color: #f0f0f0;
+}
+
+.inner-wrapper {
+  width: 1160px;
+  margin: 0 auto;
   display: flex;
 }
 
@@ -730,12 +784,18 @@ body {
   gap: 44px 40px;
 }
 
+.product-card {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+
 .product-card-link {
   text-decoration: none;
   color: inherit;
 }
 
-.product-card-image {
+.product-card-image-link {
+  grid-column: 1 / -1;
   margin-bottom: 32px;
 }
 
@@ -750,6 +810,7 @@ body {
   line-height: normal;
   color: #444444;
   font-weight: 400;
+  justify-self: end;
 }
 
 .pagination-more {
@@ -787,7 +848,6 @@ body {
   text-decoration: none;
   color: #444444;
   opacity: 0.3;
-  outline: 1px solid red;
 }
 
 .pagination-prev,
