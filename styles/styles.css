@@ -51,6 +51,19 @@ body {
   text-decoration: none;
   color: #000000;
   padding: 10px 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 16px;
+  left: 0;
+  background-color: #FFE17F;
+  z-index: -1;
 }
 
 .visually-hidden {
@@ -71,21 +84,38 @@ body {
   color: #000000;
   background-color: #FFE17F;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .navigation {
+  position: relative;
+  top: -20px;
   display: flex;
   flex-direction: column;
   width: 1040px;
   justify-content: space-between;
   margin: 0;
+  margin-top: 5px;
   padding: 0 60px;
 }
 
 .navigation-logo {
   display: block;
   margin-bottom: 30px;
+  width: 145px;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+.logo:active {
+  opacity: 0.3;
+}
+
+.logo:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .navigation-middle-container {
@@ -142,14 +172,69 @@ body {
   margin: 0;
 }
 
+.navigation-link:hover {
+  opacity: 0.6;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
 .navigation-logout {
   opacity: 0.3;
 }
 
+.navigation-profile {
+  padding-left: 27px;
+  background-image: url("../images/icons/login-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 12px;
+  background-position: center left;
+}
+
+.navigation-compare {
+  padding-left: 24px;
+  background-image: url("../images/icons/compare-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 12px;
+  background-position: center left;
+}
+
+.cart-link {
+  display: flex;
+  align-items: baseline;
+}
+
+.navigation-cart {
+  padding-left: 28px;
+  background-image: url("../images/icons/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center left;
+}
+
 .notification-badge {
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   background-color: #ffffff;
+  width: 21px;
+  height: 21px;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+  border-radius: 50%;
+  position: relative;
+  left: 5.5px;
 }
+
+/* Думаю, тут можно сделать как-то проще, без флекса, но у меня не получилось,
+поэтому взял идею из макета. */
 
 .navigation-bottom-container {
   display: flex;
@@ -185,7 +270,31 @@ body {
 }
 
 .catalog-header {
-  padding: 15px 0;
+  display: flex;
+  color: #000000;
+  text-align: left;
+  text-decoration: none;
+  margin: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog-header svg {
+  order: 2;
+  padding: 17px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.catalog-header:hover svg,
+.catalog-header:active svg {
+  opacity: 1;
+}
+
+.catalog-header:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .navigation-main a {
@@ -202,7 +311,7 @@ body {
 }
 
 .catalog {
-  display: flex;
+  display: none;
   width: 700px;
   font-size: 16px;
   line-height: 18px;
@@ -250,6 +359,7 @@ body {
   margin: 0 auto;
   justify-content: space-between;
   list-style-type: none;
+  position: relative;
 }
 
 .slider-pagination-item {
@@ -266,10 +376,11 @@ body {
   height: 135px;
   margin-right: 50px;
   width: 250px;
-  line-height: 1;
+  line-height: 0.75;
 }
 
 .slider-header {
+  position: relative;
   font-family: "Raleway", sans-serif;
   line-height: 50px;
   font-size: 50px;
@@ -291,6 +402,10 @@ body {
 
 .slider-specs {
   margin-right: auto;
+}
+
+.slider-specs tr:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 .specs-value {
@@ -565,6 +680,7 @@ body {
 
 .footer-logo {
   grid-area: logo;
+  width: 145px;
 }
 
 .footer-contacts-address {
