@@ -66,6 +66,30 @@ body {
   z-index: -1;
 }
 
+.button:hover {
+  background-color: #FFE17F;
+}
+
+.button:active {
+  background-color: #FFCC33;
+}
+
+.button:active::before {
+  background-color: #FFCC33;
+}
+
+.button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.3;
+}
+
+/* Я прописал стили для disabled, но он, получается, работает только
+именно с кнопками? Ссылки он игнорирует? */
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -88,8 +112,6 @@ body {
 }
 
 .navigation {
-  position: relative;
-  top: -20px;
   display: flex;
   flex-direction: column;
   width: 1040px;
@@ -103,6 +125,7 @@ body {
   display: block;
   margin-bottom: 30px;
   width: 145px;
+  margin-top: -20px;
 }
 
 .logo:hover {
@@ -287,12 +310,12 @@ body {
   opacity: 0.3;
 }
 
-.catalog-header:hover svg,
-.catalog-header:active svg {
+.navigation-catalog:hover svg,
+.navigation-catalog:active svg {
   opacity: 1;
 }
 
-.catalog-header:focus {
+.navigation-catalog:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
 }
@@ -317,6 +340,10 @@ body {
   line-height: 18px;
 }
 
+.navigation-catalog:active .catalog {
+  display: flex;
+}
+
 .main-wrapper {
   width: 1160px;
   color: #000000;
@@ -326,6 +353,8 @@ body {
 
 .featured {
   margin-bottom: 210px;
+  position: relative;
+  top: -16px;
 }
 
 .slider {
@@ -347,40 +376,95 @@ body {
 }
 
 .slider-right-column {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 560px;
 }
 
 .slider-pagination {
   display: flex;
+  flex-wrap: wrap;
   width: 76px;
   height: 12px;
   margin: 0 auto;
-  justify-content: space-between;
+  padding: 0;
+  justify-content: center;
   list-style-type: none;
-  position: relative;
+  line-height: 0;
 }
 
-.slider-pagination-item {
+.slider-pagination-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.slider-pagination-button {
+  position: relative;
+  top: -12px;
   width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.slider-pagination-button-current {
+  background-color: #000000;
+}
+
+.slider-pagination-button::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.slider-pagination-button:hover {
+  opacity: 0.6;
+}
+
+.slider-pagination-button:active {
+  opacity: 0.3;
+}
+
+.slider-pagination-button:focus {
+  outline: none;
+}
+
+.slider-pagination-button:focus::after {
+  display: block;
+}
+
+.slider-pagination-button:disabled {
+  opacity: 0.1;
 }
 
 .slider-number {
-  align-self: flex-end;
+  display: block;
+  position: absolute;
+  top: 29px;
+  left: 261px;
   background-color: #FFE17F;
   color: #ffffff;
   font-size: 180px;
   text-align: right;
   font-weight: 700;
-  height: 135px;
   margin-right: 50px;
   width: 250px;
   line-height: 0.75;
 }
 
-.slider-header {
+.slider-right-column-wrapper {
   position: relative;
+  top: 121px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-header {
   font-family: "Raleway", sans-serif;
   line-height: 50px;
   font-size: 50px;
@@ -401,7 +485,24 @@ body {
 }
 
 .slider-specs {
+  display: flex;
   margin-right: auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.slider-specs ul {
+  list-style-type: inherit;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.slider-specs-bracelet {
+  flex-direction: column;
+}
+
+.slider-specs-monopod ul {
+  margin-right: 40px;
 }
 
 .slider-specs tr:not(:last-child) {
@@ -411,10 +512,53 @@ body {
 .specs-value {
   font-size: 36px;
   font-weight: 400;
+  margin-bottom: 12px;
 }
 
 .specs-option {
   font-size: 16px;
+}
+
+.slider-image-buttons {
+  position: absolute;
+  top: 211px;
+  display: flex;
+  width: 530px;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+
+.slider-button {
+  width: 20px;
+  height: 60px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.slider-prev {
+  background-image: url(../images/icons/arrow-left.svg);
+}
+
+.slider-next {
+  background-image: url(../images/icons/arrow-right.svg);
+}
+
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:active {
+  opacity: 0.3;
+}
+
+.slider-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.slider-pagination-button:disabled {
+  opacity: 0.1;
 }
 
 .product-categories-list {
