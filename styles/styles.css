@@ -45,7 +45,7 @@ body {
 .button {
   font-family: "Raleway", sans-serif;
   font-size: 18px;
-  line-height: normal;
+  line-height: 20px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
   text-decoration: none;
@@ -65,10 +65,11 @@ body {
   left: 0;
   background-color: #FFE17F;
   z-index: -2;
+  transition: all 0.1s ease-out;
 }
 
-.button:hover {
-  background-color: #FFE17F;
+.button:hover::before {
+  transform: scale(1, 5);
 }
 
 .button:active {
@@ -127,6 +128,10 @@ body {
   margin-bottom: 30px;
   width: 145px;
   margin-top: -20px;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .logo:hover {
@@ -694,6 +699,11 @@ body {
   outline: none;
 }
 
+.advantages-button-current:hover::before {
+  transform: scale(1, 1);
+}
+
+
 .advantages-button-current:active::before {
   background-color: black;
 }
@@ -740,7 +750,8 @@ body {
   background-size: 136px 164px;
 }
 
-/* Скрыты для удобства. */
+/* Скрыты для удобства. Не придумал, как их иначе центровать,
+кроме как отступами. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
