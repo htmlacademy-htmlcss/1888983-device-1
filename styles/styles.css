@@ -53,6 +53,7 @@ body {
   padding: 10px 5px;
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .button::before {
@@ -63,7 +64,7 @@ body {
   top: 16px;
   left: 0;
   background-color: #FFE17F;
-  z-index: -1;
+  z-index: -2;
 }
 
 .button:hover {
@@ -262,6 +263,7 @@ body {
 .navigation-bottom-container {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 /* Здесь часть хедера находит на слайдер, поэтому пока что не ставил марджин. */
@@ -296,26 +298,35 @@ body {
   display: flex;
   color: #000000;
   text-align: left;
-  text-decoration: none;
-  margin: 0;
   align-items: center;
   justify-content: space-between;
+  text-decoration: none;
+  margin: 0;
 }
 
-.catalog-header svg {
-  order: 2;
-  padding: 17px;
+.catalog-header::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/icons/plus-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   border: 2px solid #000000;
   border-radius: 50%;
   opacity: 0.3;
 }
 
-.navigation-catalog:hover svg,
-.navigation-catalog:active svg {
+.catalog-header:hover::after {
   opacity: 1;
 }
 
-.navigation-catalog:focus {
+.catalog-header:active::after {
+  opacity: 1;
+}
+
+/* Тут будет замена + на -, поэтому дал пока два варианта. */
+
+.catalog-header:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
 }
@@ -334,10 +345,13 @@ body {
 }
 
 .catalog {
+  position: absolute;
+  z-index: 2;
   display: none;
   width: 700px;
   font-size: 16px;
   line-height: 18px;
+  background-color: #FFE17F;
 }
 
 .navigation-catalog:active .catalog {
@@ -353,9 +367,12 @@ body {
 
 .featured {
   margin-bottom: 210px;
+  margin-top: -17px;
   position: relative;
-  top: -16px;
 }
+
+/* Я задал тут позиционирование по нижнему краю меню с помощью марджина,
+но теперь лезут артефакты с обводкой и кнопкой. */
 
 .slider {
   list-style-type: none;
@@ -368,6 +385,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.slider-bracelet {
+  display: none;
+}
+
+.slider-monopod {
+  display: none;
+}
+
+/* Скрыты для удобства. */
 
 .slider-image {
   margin: 0;
@@ -387,8 +414,10 @@ body {
   height: 12px;
   margin: 0 auto;
   padding: 0;
-  justify-content: center;
   list-style-type: none;
+}
+
+.slider-pagination-item {
   line-height: 0;
 }
 
@@ -398,7 +427,6 @@ body {
 
 .slider-pagination-button {
   position: relative;
-  top: -12px;
   width: 12px;
   height: 12px;
   padding: 0;
@@ -455,13 +483,13 @@ body {
   margin-right: 50px;
   width: 250px;
   line-height: 0.75;
+  z-index: 1;
 }
 
 .slider-right-column-wrapper {
-  position: relative;
-  top: 121px;
   display: flex;
   flex-direction: column;
+  margin-top: 121px;
 }
 
 .slider-header {
@@ -470,6 +498,7 @@ body {
   font-size: 50px;
   margin: 0;
   margin-bottom: 30px;
+  z-index: 2;
 }
 
 .slider-text {
@@ -576,27 +605,37 @@ body {
   letter-spacing: -0.36px;
   color: #000000;
   text-decoration: none;
+  display: block;
 }
 
 .product-categories-list-item:not(:last-child) {
-  height: 253px;
   width: 160px;
   margin: 0;
   padding: 0;
   margin-right: 40px;
 }
 
-.product-categories-image {
+.product-categories-list-item svg {
   background-color: #FFE17F;
-  height: 160px;
-  width: 160px;
-  margin-bottom: 33px;
+  margin-bottom: 32px;
 }
 
 .product-categories-title {
   display: block;
   margin: 0;
-  height: 60px;
+}
+
+.product-categories-link:hover svg {
+  background-color: #FFCC33;
+}
+
+.product-categories-link:active {
+  opacity: 0.3;
+}
+
+.product-categories-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .advantages-block {
@@ -622,23 +661,86 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 326px;
+  width: 287px;
+  border-right: 7px solid black;
+  box-sizing: border-box;
+}
+
+.advantages-button {
+  border: none;
+  text-align: center;
+  width: 160px;
+}
+
+.advantages-button-current {
+  color: #FFE17F;
+}
+
+.advantages-button-current::before {
+  content: '';
+  background-color: black;
+  width: 280px;
+  height: 100%;
+  top: 0;
+}
+
+/* Я не уверен, что такая перезапись или даже наслаивание псевдоэлементов —
+это хорошо, но оно работает. :) */
+
+.advantages-button-current:hover,
+.advantages-button-current:active,
+.advantages-button-current:focus {
+  padding-left: 40px;
+  outline: none;
+}
+
+.advantages-button-current:active::before {
+  background-color: black;
 }
 
 .advantages-menu-item:not(:last-child) {
   margin-bottom: 35px;
 }
 
-.advantages-item {
+.advantages {
+  width: 873px;
+  padding-left: 116px;
   box-sizing: border-box;
-  width: 730px;
-  margin-left: 116px;
-  margin-right: auto;
-  justify-content: space-between;
-  padding: 72px 0;
 }
 
-/* Как мне кажется, картинки тут декоративные, поэтому убрал их из разметки. */
+.advantages-delivery {
+  width: 694px;
+  margin-right: auto;
+  padding: 72.5px 0;
+  background-image: url(../images/decor/delivery.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 136px 164px;
+}
+
+.advantages-warranty {
+  display: none;
+  width: 729px;
+  margin-right: auto;
+  padding: 62px 0;
+  background-image: url(../images/decor/warranty.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 171px 195px;
+}
+
+.advantages-credit {
+  display: none;
+  width: 729px;
+  margin-right: auto;
+  padding: 62.5px 0;
+  background-image: url(../images/decor/credit.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 136px 164px;
+}
+
+/* Скрыты для удобства. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
@@ -655,19 +757,61 @@ body {
   max-width: 480px;
 }
 
-.rare-item-order {
+.rare-item-order-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   line-height: normal;
   letter-spacing: 4px;
-  text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: #f0f0f0;
   box-sizing: border-box;
   width: 1160px;
-  height: 100px;
-  padding: 40px 0;
   margin-bottom: 70px;
+  color: inherit;
+}
+
+.rare-item-order-button::before {
+  content: '';
+  width: 125px;
+  height: 100px;
+  background-image: url(../images/decor/truck.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FFE17F;
+}
+
+.rare-item-order-button::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/icons/info.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  background-color: #DCDCDC80;
+  opacity: 0.5;
+  margin: 0 42.5px;
+}
+
+.rare-item-order-button:hover::before {
+  background-color: #FFCC33;
+}
+
+.rare-item-order-button:hover::after {
+  opacity: 1;
+}
+
+.rare-item-order-button:active {
+  opacity: 0.3;
+}
+
+.rare-item-order-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .about-title,
