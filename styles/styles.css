@@ -134,6 +134,7 @@ body {
 
 .logo {
   cursor: pointer;
+  transition: opacity 0.1s;
 }
 
 .logo:hover {
@@ -321,6 +322,7 @@ body {
   border: 2px solid #000000;
   border-radius: 50%;
   opacity: 0.3;
+  transition: opacity 0.1s;
 }
 
 .catalog-header:hover::after {
@@ -437,6 +439,7 @@ body {
   border: 2px solid black;
   border-radius: 50%;
   background-color: #ffffff;
+  transition: opacity 0.05s;
 }
 
 .slider-pagination-button-current {
@@ -567,6 +570,7 @@ body {
   border: none;
   background-color: #ffffff;
   cursor: pointer;
+  transition: opacity 0.05s;
 }
 
 .slider-prev {
@@ -610,7 +614,10 @@ body {
   color: #000000;
   text-decoration: none;
   display: block;
+  transition: opacity 0.15s ease-out;
 }
+
+/* Не понял пока, как поставить смене фона скорость. */
 
 .product-categories-list-item:not(:last-child) {
   width: 160px;
@@ -782,6 +789,7 @@ body {
   width: 1160px;
   margin-bottom: 70px;
   color: inherit;
+  transition: opacity 0.15s ease-out;
 }
 
 .rare-item-order-button::before {
@@ -1012,18 +1020,22 @@ body {
   padding: 15px 36px;
   border: 3px solid #c4c4c4;
   box-sizing: border-box;
+  transition: active .15s ease-out; /* Тоже пока поставлено просто так,
+  кажется, оно не работает :) */
 }
 
 .newsletter-button:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
+  padding: 18px 39px;
 }
 
 .newsletter-button:active {
   background-color: #000000;
   color: rgba(255, 255, 255, 0.3);
   border: none;
+  padding: 18px 39px;
 }
 
 .newsletter-button:focus {
@@ -1060,7 +1072,11 @@ body {
   ". social academy";
   gap: 35px 119px;
   padding: 62px 0 47px 0;
+  align-items: center;
 }
+
+/* Я поставил весь центральный ряд по центру, потому что в макете
+полный бардак. Где-то 4 пикселя отступ сверху, где-то 7. */
 
 .footer-logo {
   grid-area: logo;
@@ -1068,8 +1084,18 @@ body {
 }
 
 .footer-contacts-address {
+  position: relative;
   font-style: normal;
   grid-area: address;
+}
+
+.footer-contacts-address::after {
+  position: absolute;
+  content: '';
+  background-color: #FFCC33;
+  width: 80px;
+  height: 7px;
+  top: 104px;
 }
 
 .footer-contacts-address-text {
@@ -1078,15 +1104,30 @@ body {
 
 .footer-contacts-phone {
   grid-area: tel;
+  margin-left: auto;
 }
 
 .footer-contacts-phone-link {
-  display: block;
+  display: inline-block;
   color: #ffffff;
   text-decoration: underline;
   font-style: normal;
   text-align: right;
-  padding: 7px 0 13px;
+  padding: 10px 0;
+}
+
+.footer-contacts-phone-link:hover {
+  color: #FFCC33;
+}
+
+.footer-contacts-phone-link:active {
+  color: #FFCC33;
+  opacity: 0.3;
+}
+
+.footer-contacts-phone-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .footer-navigation-list {
@@ -1107,7 +1148,24 @@ body {
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: 4px 0 15px;
+  line-height: 20px;
+  padding: 10px 0;
+  transition: hover active .15s ease-out;
+}
+
+.footer-navigation-link:hover {
+  color: #FFCC33;
+  border-bottom: 2px solid #FFCC33;
+  padding-bottom: 8px; /* Box-sizing почему-то не работает. */
+}
+
+.footer-navigation-link:active {
+  opacity: 0.3;
+}
+
+.footer-navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .footer-social {
@@ -1125,17 +1183,52 @@ body {
 }
 
 .social-button {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
   color: inherit;
   height: 40px;
   width: 40px;
   padding: 0;
-  outline: 1px solid wheat;
   margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: hover active .15s ease-out;
+}
+
+.social-button svg {
+  margin: 0 auto;
 }
 
 .footer-social-item:not(:nth-child(3n)) {
   margin-right: 15px;
+}
+
+.social-button::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.social-button:hover {
+  background-color: #FFCC33;
+}
+
+.social-button:active svg {
+  opacity: 0.3;
+}
+
+.social-button:focus {
+  outline: none;
+}
+
+.social-button:focus::after {
+  display: block;
 }
 
 .footer-developer {
@@ -1144,9 +1237,17 @@ body {
   align-self: center;
 }
 
-.footer-developer-logo {
-  display: flex;
-  padding: 10px 0;
+.footer-developer:hover .footer-developer-logo {
+  fill: #ffffff;
+}
+
+.footer-developer:active {
+  opacity: 0.3;
+}
+
+.footer-developer:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .main-inner {
