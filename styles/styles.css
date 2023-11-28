@@ -85,7 +85,6 @@ body {
 
 .button:focus {
   outline: 2px solid #AF4FFF;
-  outline-offset: 2px;
 }
 
 .button:disabled {
@@ -951,8 +950,9 @@ body {
 .newsletter-wrapper {
   width: 1160px;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
+  padding: 64px 0 144px 6px;
+  justify-content: space-between;
 }
 
 .newsletter-title {
@@ -960,8 +960,8 @@ body {
   font-size: 50px;
   line-height: 50px;
   width: 348px;
-  margin: 64px auto 144px 6px;
   padding: 0;
+  margin: 0;
 }
 
 .newsletter-text,
@@ -970,8 +970,11 @@ body {
 }
 
 .newsletter-text {
-  max-width: 560px;
-  margin: 64px 0 144px;
+  max-width: 553px; /* ширина блока в макете выезжает за границу на
+  7 пикселей. Соответственно, тут либо давать заголовку точный марджин,
+  либо так и justify-content: space-between. */
+  margin: 0;
+  padding-top: 10px;
 }
 
 .newsletter-form-wrapper {
@@ -979,6 +982,7 @@ body {
   width: 1160px;
   padding-bottom: 56px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .newsletter-form {
@@ -988,19 +992,53 @@ body {
 
 .newsletter-field {
   width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  border: none;
+  background-color: inherit;
+  border-bottom: 3px solid #c4c4c4;
+  padding: 0;
 }
 
 .newsletter-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px 36px;
+  border: 3px solid #c4c4c4;
   box-sizing: border-box;
-  width: 250px;
-  padding: 18px 39px;
+}
+
+.newsletter-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+.newsletter-button:active {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+
+.newsletter-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .newsletter-free {
-  width: 160px;
-  margin-left: auto;
   text-align: right;
   padding: 13.5px 0;
+  padding-left: 32px;
+  background-image: url(../images/icons/tick.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 16px 16px;
 }
 
 .page-footer {
