@@ -43,6 +43,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   line-height: 20px;
@@ -54,6 +55,8 @@ body {
   position: relative;
   z-index: 1;
   cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .button::before {
@@ -376,9 +379,6 @@ body {
   position: relative;
 }
 
-/* Я задал тут позиционирование по нижнему краю меню с помощью марджина,
-но теперь лезут артефакты с обводкой и кнопкой. */
-
 .slider {
   list-style-type: none;
   margin: 0;
@@ -513,9 +513,9 @@ body {
 }
 
 .slider-right-column .button {
-  width: 220px;
+  width: 210px;
   margin-bottom: 50px;
-  text-align: center;
+  align-self: start;
 }
 
 .slider-specs {
@@ -830,8 +830,19 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
-  margin: 40px 0 48px;
+  margin: 47px 0 48px;
   padding: 0;
+  position: relative;
+}
+
+.about-title::before {
+  position: absolute;
+  top: -47px;
+  left: 0;
+  width: 84px;
+  height: 7px;
+  background-color: #000000;
+  content: '';
 }
 
 .about-text,
@@ -846,9 +857,27 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  margin-top: 0;
   margin-bottom: 30px;
-  padding-left: 37.5px;
+  padding: 0;
   list-style-type: none;
+}
+
+.about-item {
+  padding-left: 37.5px;
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.about-item::before {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #FFCC33;
+  top: 6px;
+  left: 1.5px;
+  border-radius: 50%;
 }
 
 .about-wrapper {
@@ -860,6 +889,20 @@ body {
 
 .about {
   width: 520px;
+}
+
+.about a {
+  width: 270px;
+}
+
+.contacts-title::before {
+  position: absolute;
+  top: -47px;
+  left: 0;
+  width: 84px;
+  height: 7px;
+  background-color: #000000;
+  content: '';
 }
 
 .contacts-subtitle {
@@ -895,6 +938,10 @@ body {
 
 .contacts {
   width: 532px;
+}
+
+.contacts a {
+  width: 260px;
 }
 
 .newsletter {
