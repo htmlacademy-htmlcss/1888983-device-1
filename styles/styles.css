@@ -1408,41 +1408,36 @@ body {
   margin-right: auto;
 }
 
-.sorter a {
+.sorter-button {
+  position: relative;
   align-self: center;
   box-sizing: border-box;
   height: 30px;
   width: 30px;
-  padding: 10px;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+
+.button-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
   opacity: 0.2;
 }
 
-.button-up {
-  background-image: url(../images/icons/sort-arrow-up.svg);
-}
-
-.button-down {
-  background-image: url(../images/icons/sort-arrow-down.svg);
-}
-
-.button-up:hover,
-.button-down:hover {
+.sorter-button:hover .button-icon {
   opacity: 0.5;
 }
 
-.button-up:active,
-.button-down:active {
+.sorter-button:active .button-icon {
   opacity: 1;
 }
 
-.button-up:focus,
-.button-down:focus {
+.sorter-button:focus {
   outline: 2px solid rgba(175, 79, 255, 1);
   outline-offset: 2px;
 }
-
 
 .product-list {
   list-style-type: none;
