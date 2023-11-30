@@ -1366,6 +1366,10 @@ body {
   letter-spacing: -0.36px;
 }
 
+.inner-left-column fieldset {
+  margin-bottom: 35px;
+}
+
 .filter-title {
   margin: 0;
   padding: 0;
