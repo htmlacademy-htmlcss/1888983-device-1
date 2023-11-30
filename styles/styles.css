@@ -688,14 +688,13 @@ body {
 }
 
 .advantages-button-current::before {
-  content: '';
   background-color: black;
   width: 280px;
   height: 100%;
   top: 0;
 }
 
-/* Я не уверен, что такая перезапись или даже наслаивание псевдоэлементов —
+/* Я не уверен, что такая перезапись псевдоэлементов —
 это хорошо, но оно работает. :) */
 
 .advantages-button-current:hover,
@@ -1282,13 +1281,45 @@ body {
   display: flex;
   padding: 0;
   margin: 0;
+  line-height: 20px;
+}
+
+.breadcrumbs-item {
+  position: relative;
+  margin-right: 36px;
+}
+
+.breadcrumbs-item::after {
+  position: absolute;
+  width: 36px;
+  height: 20px;
+  content: '';
+  background-image: url(../images/icons/breadcrumbs-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 4px 7px;
+  background-position: center;
+}
+
+.breadcrumbs-item:last-child::after {
+  content: none;
 }
 
 .breadcrumbs-link {
-  line-height: 20px;
   text-decoration: none;
   color: #000000;
-  margin-right: 36px;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .grey-wrapper {
@@ -1350,6 +1381,14 @@ body {
   line-height: 20px;
 }
 
+.filter-button {
+  display: block;
+  width: 220px;
+  line-height: 20px;
+  border: none;
+  margin: 0 auto;
+}
+
 .sorter {
   display: flex;
   width: 760px;
@@ -1365,14 +1404,41 @@ body {
   margin-right: auto;
 }
 
-.sorter .button {
+.sorter a {
   align-self: center;
   box-sizing: border-box;
   height: 30px;
   width: 30px;
   padding: 10px;
-  outline: 1px solid wheat;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2;
 }
+
+.button-up {
+  background-image: url(../images/icons/sort-arrow-up.svg);
+}
+
+.button-down {
+  background-image: url(../images/icons/sort-arrow-down.svg);
+}
+
+.button-up:hover,
+.button-down:hover {
+  opacity: 0.5;
+}
+
+.button-up:active,
+.button-down:active {
+  opacity: 1;
+}
+
+.button-up:focus,
+.button-down:focus {
+  outline: 2px solid rgba(175, 79, 255, 1);
+  outline-offset: 2px;
+}
+
 
 .product-list {
   list-style-type: none;
@@ -1385,16 +1451,28 @@ body {
 }
 
 .product-card {
-  display: grid;
-  grid-template-columns: min-content auto;
+  position: relative;
+}
+
+.product-card .button {
+  position: absolute;
+  display: none;
+  top: 180px;
+  left: 75px;
+  box-sizing: border-box;
+  width: 210px;
+  outline: none;
 }
 
 .product-card-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content auto;
   text-decoration: none;
   color: inherit;
 }
 
-.product-card-image-link {
+.product-card-image {
   grid-column: 1 / -1;
   margin-bottom: 32px;
 }
@@ -1413,11 +1491,70 @@ body {
   justify-self: end;
 }
 
+.product-card-new::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'new';
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  top: 27px;
+  right: 27px;
+}
+
+.product-card-link:hover {
+  opacity: 0.6;
+}
+
+.product-card-link:active .product-card-title {
+  opacity: 0.4;
+}
+
+.product-card-link:active .product-card-price {
+  opacity: 0.4;
+}
+
+/* Значения указал на глаз, потому что в стайлгайде это не прописано. */
+
+.product-card-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.product-card:hover .button {
+  display: block;
+}
+
 .pagination-more {
   display: block;
   width: 760px;
   margin: 0 auto 44px;
   padding: 18px 39px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 3px solid #E5E5E5;
+}
+
+.pagination-more::before {
+  content: none;
+}
+
+.pagination-more:hover {
+  border-color: #000000;
+}
+
+.pagination-more:active {
+  opacity: 0.3;
+  background-color: #ffffff;
 }
 
 .pagination-wrapper {
@@ -1450,8 +1587,25 @@ body {
   opacity: 0.3;
 }
 
-.pagination-prev,
-.pagination-next {
+.pagination-current {
+  opacity: 0.6;
+}
+
+.pagination-link:hover {
+  opacity: 1;
+}
+
+.pagination-link:active {
+  opacity: 0.1;
+}
+
+.pagination-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+  opacity: 1  ;
+}
+
+.pagination-button {
   font-family: "Railway", sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -1460,13 +1614,25 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
-  opacity: 0.3;
   display: block;
   box-sizing: border-box;
   padding: 25px;
 }
 
-.pagination-next,
-.pagination-current {
-  opacity: 1;
+.pagination-disabled {
+  opacity: 0.3;
+}
+
+.pagination-button:hover {
+  background-color: #DCDCDC;
+}
+
+.pagination-button:active {
+  background-color: #DCDCDC;
+  opacity: 0.3;
+}
+
+.pagination-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
