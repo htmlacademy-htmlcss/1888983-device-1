@@ -1616,22 +1616,23 @@ body {
   display: block;
   box-sizing: border-box;
   padding: 25px;
-}
-
-.pagination-disabled {
   opacity: 0.3;
 }
 
-.pagination-button:hover {
+.pagination-actived {
+  opacity: 1;
+}
+
+.pagination-actived:hover {
   background-color: #DCDCDC;
 }
 
-.pagination-button:active {
+.pagination-actived:active {
   background-color: #DCDCDC;
   opacity: 0.3;
 }
 
-.pagination-button:focus {
+.pagination-actived:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
 }
