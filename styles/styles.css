@@ -91,9 +91,6 @@ body {
   opacity: 0.3;
 }
 
-/* Я прописал стили для disabled, но он, получается, работает только
-именно с кнопками? Ссылки он игнорирует? */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -273,8 +270,6 @@ body {
   align-items: center;
   z-index: 2;
 }
-
-/* Здесь часть хедера находит на слайдер, поэтому пока что не ставил марджин. */
 
 .navigation-catalog {
   width: 290px;
@@ -933,6 +928,22 @@ body {
   text-transform: uppercase;
   color: #444444;
 }
+
+.contacts-phone:hover {
+  opacity: 0.6;
+}
+
+.contacts-phone:active {
+  opacity: 0.3;
+}
+
+.contacts-phone:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+/* В стайлгайде этого нет, но обычное поведение ссылки не вписывается
+в общий макет, поэтому применил стандартное поведение для ссылок. */
 
 .contacts-schedule {
   list-style-type: none;
