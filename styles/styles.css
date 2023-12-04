@@ -43,14 +43,52 @@ body {
 }
 
 .button {
+  display: inline-block;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
-  line-height: normal;
+  line-height: 20px;
   letter-spacing: 3.6px;
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
   padding: 10px 5px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 16px;
+  left: 0;
+  background-color: #FFE17F;
+  z-index: -2;
+  transition: all 0.1s ease-out;
+}
+
+.button:hover::before {
+  transform: scale(1, 5);
+}
+
+.button:active {
+  background-color: #FFCC33;
+}
+
+.button:active::before {
+  background-color: #FFCC33;
+}
+
+.button:focus {
+  outline: 2px solid #AF4FFF;
+}
+
+.button:disabled {
+  opacity: 0.3;
 }
 
 .visually-hidden {
@@ -71,7 +109,7 @@ body {
   color: #000000;
   background-color: #FFE17F;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .navigation {
@@ -80,12 +118,33 @@ body {
   width: 1040px;
   justify-content: space-between;
   margin: 0;
+  margin-top: 5px;
   padding: 0 60px;
 }
 
 .navigation-logo {
   display: block;
   margin-bottom: 30px;
+  width: 145px;
+  margin-top: -20px;
+}
+
+.logo {
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.logo:hover {
+  opacity: 0.6;
+}
+
+.logo:active {
+  opacity: 0.3;
+}
+
+.logo:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .navigation-middle-container {
@@ -142,21 +201,75 @@ body {
   margin: 0;
 }
 
+.navigation-link:hover {
+  opacity: 0.6;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
+}
+
+.navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
 .navigation-logout {
   opacity: 0.3;
 }
 
+.navigation-profile {
+  padding-left: 27px;
+  background-image: url("../images/icons/login-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 15px 12px;
+  background-position: center left;
+}
+
+.navigation-compare {
+  padding-left: 24px;
+  background-image: url("../images/icons/compare-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 10px 12px;
+  background-position: center left;
+}
+
+.cart-link {
+  display: flex;
+  align-items: baseline;
+}
+
+.navigation-cart {
+  padding-left: 28px;
+  background-image: url("../images/icons/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 14px;
+  background-position: center left;
+}
+
 .notification-badge {
+  display: flex;
+  flex-direction: column;
   font-size: 14px;
   background-color: #ffffff;
+  width: 21px;
+  height: 21px;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+  border-radius: 50%;
+  position: relative;
+  left: 5.5px;
 }
+
+/* Думаю, тут можно сделать как-то проще, без флекса, но у меня не получилось,
+поэтому взял идею из макета. */
 
 .navigation-bottom-container {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
-
-/* Здесь часть хедера находит на слайдер, поэтому пока что не ставил марджин. */
 
 .navigation-catalog {
   width: 290px;
@@ -185,7 +298,41 @@ body {
 }
 
 .catalog-header {
-  padding: 15px 0;
+  display: flex;
+  color: #000000;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 0;
+}
+
+.catalog-header::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/icons/plus-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: opacity 0.1s;
+}
+
+.catalog-header:hover::after {
+  opacity: 1;
+}
+
+.catalog-header:active::after {
+  opacity: 1;
+}
+
+/* Тут будет замена + на -, поэтому дал пока два варианта. */
+
+.catalog-header:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .navigation-main a {
@@ -202,10 +349,17 @@ body {
 }
 
 .catalog {
-  display: flex;
+  position: absolute;
+  z-index: 2;
+  display: none;
   width: 700px;
   font-size: 16px;
   line-height: 18px;
+  background-color: #FFE17F;
+}
+
+.navigation-catalog:active .catalog {
+  display: flex;
 }
 
 .main-wrapper {
@@ -217,6 +371,8 @@ body {
 
 .featured {
   margin-bottom: 210px;
+  margin-top: -17px;
+  position: relative;
 }
 
 .slider {
@@ -231,6 +387,16 @@ body {
   padding: 0;
 }
 
+.slider-bracelet {
+  display: none;
+}
+
+.slider-monopod {
+  display: none;
+}
+
+/* Скрыты для удобства. */
+
 .slider-image {
   margin: 0;
   width: 560px;
@@ -238,35 +404,94 @@ body {
 }
 
 .slider-right-column {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 560px;
 }
 
 .slider-pagination {
   display: flex;
+  flex-wrap: wrap;
   width: 76px;
   height: 12px;
   margin: 0 auto;
-  justify-content: space-between;
+  padding: 0;
   list-style-type: none;
 }
 
 .slider-pagination-item {
+  line-height: 0;
+}
+
+.slider-pagination-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.slider-pagination-button {
+  position: relative;
   width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: opacity 0.05s;
+}
+
+.slider-pagination-button-current {
+  background-color: #000000;
+}
+
+.slider-pagination-button::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.slider-pagination-button:hover {
+  opacity: 0.6;
+}
+
+.slider-pagination-button:active {
+  opacity: 0.3;
+}
+
+.slider-pagination-button:focus {
+  outline: none;
+}
+
+.slider-pagination-button:focus::after {
+  display: block;
+}
+
+.slider-pagination-button:disabled {
+  opacity: 0.1;
 }
 
 .slider-number {
-  align-self: flex-end;
+  display: block;
+  position: absolute;
+  top: 29px;
+  left: 261px;
   background-color: #FFE17F;
   color: #ffffff;
   font-size: 180px;
   text-align: right;
   font-weight: 700;
-  height: 135px;
   margin-right: 50px;
   width: 250px;
-  line-height: 1;
+  line-height: 0.75;
+  z-index: 1;
+}
+
+.slider-right-column-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 121px;
 }
 
 .slider-header {
@@ -275,6 +500,7 @@ body {
   font-size: 50px;
   margin: 0;
   margin-bottom: 30px;
+  z-index: 2;
 }
 
 .slider-text {
@@ -284,22 +510,87 @@ body {
 }
 
 .slider-right-column .button {
-  width: 220px;
+  width: 210px;
   margin-bottom: 50px;
-  text-align: center;
+  align-self: start;
 }
 
 .slider-specs {
+  display: flex;
   margin-right: auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.slider-specs ul {
+  list-style-type: inherit;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.slider-specs-bracelet {
+  flex-direction: column;
+}
+
+.slider-specs-monopod ul {
+  margin-right: 40px;
+}
+
+.slider-specs tr:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 .specs-value {
   font-size: 36px;
   font-weight: 400;
+  margin-bottom: 12px;
 }
 
 .specs-option {
   font-size: 16px;
+}
+
+.slider-image-buttons {
+  position: absolute;
+  top: 211px;
+  display: flex;
+  width: 530px;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+
+.slider-button {
+  width: 20px;
+  height: 60px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.05s;
+}
+
+.slider-prev {
+  background-image: url(../images/icons/arrow-left.svg);
+}
+
+.slider-next {
+  background-image: url(../images/icons/arrow-right.svg);
+}
+
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:active {
+  opacity: 0.3;
+}
+
+.slider-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.slider-pagination-button:disabled {
+  opacity: 0.1;
 }
 
 .product-categories-list {
@@ -317,27 +608,40 @@ body {
   letter-spacing: -0.36px;
   color: #000000;
   text-decoration: none;
+  display: block;
+  transition: opacity 0.15s ease-out;
 }
 
+/* Не понял пока, как поставить смене фона скорость. */
+
 .product-categories-list-item:not(:last-child) {
-  height: 253px;
   width: 160px;
   margin: 0;
   padding: 0;
   margin-right: 40px;
 }
 
-.product-categories-image {
+.product-categories-list-item svg {
   background-color: #FFE17F;
-  height: 160px;
-  width: 160px;
-  margin-bottom: 33px;
+  margin-bottom: 32px;
 }
 
 .product-categories-title {
   display: block;
   margin: 0;
-  height: 60px;
+}
+
+.product-categories-link:hover svg {
+  background-color: #FFCC33;
+}
+
+.product-categories-link:active {
+  opacity: 0.3;
+}
+
+.product-categories-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .advantages-block {
@@ -363,23 +667,91 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 326px;
+  width: 287px;
+  border-right: 7px solid black;
+  box-sizing: border-box;
+}
+
+.advantages-button {
+  border: none;
+  text-align: center;
+  width: 160px;
+}
+
+.advantages-button-current {
+  color: #FFE17F;
+}
+
+.advantages-button-current::before {
+  background-color: black;
+  width: 280px;
+  height: 100%;
+  top: 0;
+}
+
+/* Я не уверен, что такая перезапись псевдоэлементов —
+это хорошо, но оно работает. :) */
+
+.advantages-button-current:hover,
+.advantages-button-current:active,
+.advantages-button-current:focus {
+  padding-left: 40px;
+  outline: none;
+}
+
+.advantages-button-current:hover::before {
+  transform: scale(1, 1);
+}
+
+
+.advantages-button-current:active::before {
+  background-color: black;
 }
 
 .advantages-menu-item:not(:last-child) {
   margin-bottom: 35px;
 }
 
-.advantages-item {
+.advantages {
+  width: 873px;
+  padding-left: 116px;
   box-sizing: border-box;
-  width: 730px;
-  margin-left: 116px;
-  margin-right: auto;
-  justify-content: space-between;
-  padding: 72px 0;
 }
 
-/* Как мне кажется, картинки тут декоративные, поэтому убрал их из разметки. */
+.advantages-delivery {
+  width: 694px;
+  margin-right: auto;
+  padding: 72.5px 0;
+  background-image: url(../images/decor/delivery.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 136px 164px;
+}
+
+.advantages-warranty {
+  display: none;
+  width: 729px;
+  margin-right: auto;
+  padding: 62px 0;
+  background-image: url(../images/decor/warranty.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 171px 195px;
+}
+
+.advantages-credit {
+  display: none;
+  width: 729px;
+  margin-right: auto;
+  padding: 62.5px 0;
+  background-image: url(../images/decor/credit.svg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 136px 164px;
+}
+
+/* Скрыты для удобства. Не придумал, как их иначе центровать,
+кроме как отступами. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
@@ -396,19 +768,62 @@ body {
   max-width: 480px;
 }
 
-.rare-item-order {
+.rare-item-order-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   line-height: normal;
   letter-spacing: 4px;
-  text-align: center;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: #f0f0f0;
   box-sizing: border-box;
   width: 1160px;
-  height: 100px;
-  padding: 40px 0;
   margin-bottom: 70px;
+  color: inherit;
+  transition: opacity 0.15s ease-out;
+}
+
+.rare-item-order-button::before {
+  content: '';
+  width: 125px;
+  height: 100px;
+  background-image: url(../images/decor/truck.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FFE17F;
+}
+
+.rare-item-order-button::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/icons/info.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  background-color: #DCDCDC80;
+  opacity: 0.5;
+  margin: 0 42.5px;
+}
+
+.rare-item-order-button:hover::before {
+  background-color: #FFCC33;
+}
+
+.rare-item-order-button:hover::after {
+  opacity: 1;
+}
+
+.rare-item-order-button:active {
+  opacity: 0.3;
+}
+
+.rare-item-order-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .about-title,
@@ -416,8 +831,19 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
-  margin: 40px 0 48px;
+  margin: 47px 0 48px;
   padding: 0;
+  position: relative;
+}
+
+.about-title::before {
+  position: absolute;
+  top: -47px;
+  left: 0;
+  width: 84px;
+  height: 7px;
+  background-color: #000000;
+  content: '';
 }
 
 .about-text,
@@ -432,9 +858,27 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  margin-top: 0;
   margin-bottom: 30px;
-  padding-left: 37.5px;
+  padding: 0;
   list-style-type: none;
+}
+
+.about-item {
+  padding-left: 37.5px;
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.about-item::before {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #FFCC33;
+  top: 6px;
+  left: 1.5px;
+  border-radius: 50%;
 }
 
 .about-wrapper {
@@ -446,6 +890,20 @@ body {
 
 .about {
   width: 520px;
+}
+
+.about a {
+  width: 270px;
+}
+
+.contacts-title::before {
+  position: absolute;
+  top: -47px;
+  left: 0;
+  width: 84px;
+  height: 7px;
+  background-color: #000000;
+  content: '';
 }
 
 .contacts-subtitle {
@@ -471,6 +929,22 @@ body {
   color: #444444;
 }
 
+.contacts-phone:hover {
+  opacity: 0.6;
+}
+
+.contacts-phone:active {
+  opacity: 0.3;
+}
+
+.contacts-phone:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+/* В стайлгайде этого нет, но обычное поведение ссылки не вписывается
+в общий макет, поэтому применил стандартное поведение для ссылок. */
+
 .contacts-schedule {
   list-style-type: none;
   color: #444444;
@@ -483,6 +957,10 @@ body {
   width: 532px;
 }
 
+.contacts a {
+  width: 260px;
+}
+
 .newsletter {
   background-color: #f0f0f0;
 }
@@ -490,8 +968,9 @@ body {
 .newsletter-wrapper {
   width: 1160px;
   display: flex;
-  justify-content: space-between;
   margin: 0 auto;
+  padding: 64px 0 144px 6px;
+  justify-content: space-between;
 }
 
 .newsletter-title {
@@ -499,8 +978,8 @@ body {
   font-size: 50px;
   line-height: 50px;
   width: 348px;
-  margin: 64px auto 144px 6px;
   padding: 0;
+  margin: 0;
 }
 
 .newsletter-text,
@@ -509,8 +988,11 @@ body {
 }
 
 .newsletter-text {
-  max-width: 560px;
-  margin: 64px 0 144px;
+  max-width: 553px; /* ширина блока в макете выезжает за границу на
+  7 пикселей. Соответственно, тут либо давать заголовку точный марджин,
+  либо так и justify-content: space-between. */
+  margin: 0;
+  padding-top: 10px;
 }
 
 .newsletter-form-wrapper {
@@ -518,6 +1000,7 @@ body {
   width: 1160px;
   padding-bottom: 56px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .newsletter-form {
@@ -527,19 +1010,57 @@ body {
 
 .newsletter-field {
   width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  border: none;
+  background-color: inherit;
+  border-bottom: 3px solid #c4c4c4;
+  padding: 0;
 }
 
 .newsletter-button {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px 36px;
+  border: 3px solid #c4c4c4;
   box-sizing: border-box;
-  width: 250px;
+  transition: active .15s ease-out; /* Тоже пока поставлено просто так,
+  кажется, оно не работает :) */
+}
+
+.newsletter-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
   padding: 18px 39px;
 }
 
+.newsletter-button:active {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 18px 39px;
+}
+
+.newsletter-button:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
 .newsletter-free {
-  width: 160px;
-  margin-left: auto;
   text-align: right;
   padding: 13.5px 0;
+  padding-left: 32px;
+  background-image: url(../images/icons/tick.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 16px 16px;
 }
 
 .page-footer {
@@ -561,16 +1082,30 @@ body {
   ". social academy";
   gap: 35px 119px;
   padding: 62px 0 47px 0;
-  align-content: center;
+  align-items: center;
 }
+
+/* Я поставил весь центральный ряд по центру, потому что в макете
+полный бардак. Где-то 4 пикселя отступ сверху, где-то 7. */
 
 .footer-logo {
   grid-area: logo;
+  width: 145px;
 }
 
 .footer-contacts-address {
+  position: relative;
   font-style: normal;
   grid-area: address;
+}
+
+.footer-contacts-address::after {
+  position: absolute;
+  content: '';
+  background-color: #FFCC33;
+  width: 80px;
+  height: 7px;
+  top: 104px;
 }
 
 .footer-contacts-address-text {
@@ -579,15 +1114,30 @@ body {
 
 .footer-contacts-phone {
   grid-area: tel;
+  margin-left: auto;
 }
 
 .footer-contacts-phone-link {
-  display: block;
+  display: inline-block;
   color: #ffffff;
   text-decoration: underline;
   font-style: normal;
   text-align: right;
-  padding: 7px 0 13px;
+  padding: 10px 0;
+}
+
+.footer-contacts-phone-link:hover {
+  color: #FFCC33;
+}
+
+.footer-contacts-phone-link:active {
+  color: #FFCC33;
+  opacity: 0.3;
+}
+
+.footer-contacts-phone-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .footer-navigation-list {
@@ -608,7 +1158,24 @@ body {
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: 4px 0 15px;
+  line-height: 20px;
+  padding: 10px 0;
+  transition: hover active .15s ease-out;
+}
+
+.footer-navigation-link:hover {
+  color: #FFCC33;
+  border-bottom: 2px solid #FFCC33;
+  padding-bottom: 8px; /* Box-sizing почему-то не работает. */
+}
+
+.footer-navigation-link:active {
+  opacity: 0.3;
+}
+
+.footer-navigation-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .footer-social {
@@ -626,17 +1193,52 @@ body {
 }
 
 .social-button {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
   color: inherit;
   height: 40px;
   width: 40px;
   padding: 0;
-  outline: 1px solid wheat;
   margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: hover active .15s ease-out;
+}
+
+.social-button svg {
+  margin: 0 auto;
 }
 
 .footer-social-item:not(:nth-child(3n)) {
   margin-right: 15px;
+}
+
+.social-button::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.social-button:hover {
+  background-color: #FFCC33;
+}
+
+.social-button:active svg {
+  opacity: 0.3;
+}
+
+.social-button:focus {
+  outline: none;
+}
+
+.social-button:focus::after {
+  display: block;
 }
 
 .footer-developer {
@@ -645,9 +1247,17 @@ body {
   align-self: center;
 }
 
-.footer-developer-logo {
-  display: flex;
-  padding: 10px 0;
+.footer-developer:hover .footer-developer-logo {
+  fill: #ffffff;
+}
+
+.footer-developer:active {
+  opacity: 0.3;
+}
+
+.footer-developer:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .main-inner {
@@ -682,13 +1292,45 @@ body {
   display: flex;
   padding: 0;
   margin: 0;
+  line-height: 20px;
+}
+
+.breadcrumbs-item {
+  position: relative;
+  margin-right: 36px;
+}
+
+.breadcrumbs-item::after {
+  position: absolute;
+  width: 36px;
+  height: 20px;
+  content: '';
+  background-image: url(../images/icons/breadcrumbs-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 4px 7px;
+  background-position: center;
+}
+
+.breadcrumbs-item:last-child::after {
+  content: none;
 }
 
 .breadcrumbs-link {
-  line-height: 20px;
   text-decoration: none;
   color: #000000;
-  margin-right: 36px;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .grey-wrapper {
@@ -735,6 +1377,10 @@ body {
   letter-spacing: -0.36px;
 }
 
+.inner-left-column fieldset {
+  margin-bottom: 35px;
+}
+
 .filter-title {
   margin: 0;
   padding: 0;
@@ -748,6 +1394,14 @@ body {
 .control {
   font-size: 16px;
   line-height: 20px;
+}
+
+.filter-button {
+  display: block;
+  width: 220px;
+  line-height: 20px;
+  border: none;
+  margin: 0 auto;
 }
 
 .sorter {
@@ -765,13 +1419,35 @@ body {
   margin-right: auto;
 }
 
-.sorter .button {
+.sorter-button {
+  position: relative;
   align-self: center;
   box-sizing: border-box;
   height: 30px;
   width: 30px;
-  padding: 10px;
-  outline: 1px solid wheat;
+}
+
+.button-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  opacity: 0.2;
+}
+
+.sorter-button:hover .button-icon {
+  opacity: 0.5;
+}
+
+.sorter-button:active .button-icon {
+  opacity: 1;
+}
+
+.sorter-button:focus {
+  outline: 2px solid rgba(175, 79, 255, 1);
+  outline-offset: 2px;
 }
 
 .product-list {
@@ -785,16 +1461,28 @@ body {
 }
 
 .product-card {
-  display: grid;
-  grid-template-columns: min-content auto;
+  position: relative;
+}
+
+.product-card .button {
+  position: absolute;
+  display: none;
+  top: 180px;
+  left: 75px;
+  box-sizing: border-box;
+  width: 210px;
+  outline: none;
 }
 
 .product-card-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content auto;
   text-decoration: none;
   color: inherit;
 }
 
-.product-card-image-link {
+.product-card-image {
   grid-column: 1 / -1;
   margin-bottom: 32px;
 }
@@ -813,11 +1501,70 @@ body {
   justify-self: end;
 }
 
+.product-card-new::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: 'new';
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 50%;
+  top: 27px;
+  right: 27px;
+}
+
+.product-card-link:hover {
+  opacity: 0.6;
+}
+
+.product-card-link:active .product-card-title {
+  opacity: 0.4;
+}
+
+.product-card-link:active .product-card-price {
+  opacity: 0.4;
+}
+
+/* Значения указал на глаз, потому что в стайлгайде это не прописано. */
+
+.product-card-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+.product-card:hover .button {
+  display: block;
+}
+
 .pagination-more {
   display: block;
   width: 760px;
   margin: 0 auto 44px;
   padding: 18px 39px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 3px solid #E5E5E5;
+}
+
+.pagination-more::before {
+  content: none;
+}
+
+.pagination-more:hover {
+  border-color: #000000;
+}
+
+.pagination-more:active {
+  opacity: 0.3;
+  background-color: #ffffff;
 }
 
 .pagination-wrapper {
@@ -850,8 +1597,25 @@ body {
   opacity: 0.3;
 }
 
-.pagination-prev,
-.pagination-next {
+.pagination-current {
+  opacity: 0.6;
+}
+
+.pagination-link:hover {
+  opacity: 1;
+}
+
+.pagination-link:active {
+  opacity: 0.1;
+}
+
+.pagination-link:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+  opacity: 1  ;
+}
+
+.pagination-button {
   font-family: "Railway", sans-serif;
   font-size: 18px;
   font-weight: 800;
@@ -860,13 +1624,26 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #000000;
-  opacity: 0.3;
   display: block;
   box-sizing: border-box;
   padding: 25px;
+  opacity: 0.3;
 }
 
-.pagination-next,
-.pagination-current {
+.pagination-actived {
   opacity: 1;
+}
+
+.pagination-actived:hover {
+  background-color: #DCDCDC;
+}
+
+.pagination-actived:active {
+  background-color: #DCDCDC;
+  opacity: 0.3;
+}
+
+.pagination-actived:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
