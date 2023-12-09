@@ -66,8 +66,7 @@ body {
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 50%;
-  transform: translateY(-50%);
+  top:16px;
   left: 0;
   background-color: #FFE17F;
   z-index: -2;
@@ -122,6 +121,7 @@ body {
   justify-content: space-between;
   margin: 0;
   margin-top: 5px;
+  margin-bottom: 20px;
   padding: 0 60px;
 }
 
@@ -158,6 +158,7 @@ body {
 }
 
 .search-field {
+  position: relative;
   display: flex;
 }
 
@@ -169,14 +170,84 @@ body {
 }
 
 .navigation-search {
+  position: relative;
   width: 360px;
   padding: 0 16px;
+  padding-left: 48px;
+  background-color: #FFE17F;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: none;
+  border-radius: 50px 0 0 50px;
+  box-sizing: border-box;
+  background-image: url(../images/icons/search.svg);
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+}
+
+.search-focus {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: 156px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+  z-index: 1;
+}
+
+.navigation-search:disabled {
+  opacity: 0.3;
+}
+
+.navigation-search:focus {
+  outline: none;
+}
+
+.navigation-search:focus .search-focus {
+  display: block;
 }
 
 .navigation-search-button {
+  position: relative;
   width: 160px;
   padding: 10px;
   box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 0 50px 50px 0;
+  background-color: #FFE17F;
+  transition: background-color, color .15s;
+}
+
+.navigation-search-button::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.navigation-search-button:disabled {
+  opacity: 0.3;
+}
+
+.navigation-search-button:hover {
+  background-color: black;
+  color: #ffffff;
+}
+
+.navigation-search-button:active {
+  color:rgba(255, 255, 255, 0.3);
+}
+
+.navigation-search-button:focus::after {
+  display: block;
+  outline: none;
 }
 
 .navigation-login {
@@ -272,6 +343,7 @@ body {
 }
 
 .navigation-catalog {
+  position: relative;
   width: 290px;
   margin-right: auto;
 }
@@ -303,28 +375,44 @@ body {
   margin: 0;
 }
 
-.catalog-header::after {
-  content: '';
+.catalog-button {
+  position: relative;
   width: 50px;
   height: 50px;
-  background-image: url(../images/icons/plus-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
   border: 2px solid #000000;
   border-radius: 50%;
   opacity: 0.3;
   transition: opacity .15s;
 }
 
-.catalog-header:hover::after {
+.catalog-button::before,
+.catalog-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  right: 17px;
+  bottom: 17px;
+  width: 16px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.catalog-button::after {
+  transform: rotate(90deg);
+}
+
+.catalog-header:hover .catalog-button {
   opacity: 1;
 }
 
-.catalog-header:active::after {
-  opacity: 1;
+.catalog-header:hover .catalog-button::after {
+  display: none;
 }
 
-/* Тут будет замена + на -, поэтому дал пока два варианта. */
+.catalog-button:active {
+  opacity: 1;
+}
 
 .catalog-header:focus {
   outline: 2px solid #AF4FFF;
@@ -345,20 +433,27 @@ body {
 
 .catalog {
   position: absolute;
-  z-index: 2;
+  box-sizing: border-box;
   display: none;
-  width: 700px;
+  width: 1160px;
+  top: 34px;
+  left: -60px;
   font-size: 16px;
   line-height: 18px;
   background-color: #FFE17F;
+  padding: 30px 60px 30px;
+  column-count: 3;
+  column-width: 215px;
+  column-gap: 30px;
+  z-index: -1;
 }
 
-.navigation-catalog:active .catalog {
-  display: flex;
+.navigation-catalog:hover .catalog {
+  display: block;
 }
 
 .navigation-catalog:focus-within .catalog {
-  display: flex;
+  display: block;
 }
 
 .main-wrapper {
@@ -370,7 +465,7 @@ body {
 
 .featured {
   margin-bottom: 210px;
-  margin-top: -17px;
+  margin-top: -37px;
   position: relative;
 }
 
@@ -682,7 +777,6 @@ body {
 .advantages-button-current::before {
   background-color: black;
   width: 280px;
-  transform: translateY(0);
   height: 100%;
   top: 0;
 }
