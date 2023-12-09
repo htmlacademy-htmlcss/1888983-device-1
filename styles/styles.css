@@ -57,6 +57,8 @@ body {
   cursor: pointer;
   text-align: center;
   box-sizing: border-box;
+  direction: rtl;
+  text-indent: -3.6px;
 }
 
 .button::before {
@@ -64,11 +66,12 @@ body {
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 16px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   background-color: #FFE17F;
   z-index: -2;
-  transition: all 0.1s ease-out;
+  transition: all .15s;
 }
 
 .button:hover::before {
@@ -131,7 +134,7 @@ body {
 
 .logo {
   cursor: pointer;
-  transition: opacity 0.1s;
+  transition: opacity .15s;
 }
 
 .logo:hover {
@@ -167,12 +170,11 @@ body {
 
 .navigation-search {
   width: 360px;
-  padding: 0;
+  padding: 0 16px;
 }
 
 .navigation-search-button {
   width: 160px;
-  height: 40px;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -199,6 +201,7 @@ body {
   text-align: left;
   text-decoration: none;
   margin: 0;
+  transition: opacity .15s;
 }
 
 .navigation-link:hover {
@@ -262,9 +265,6 @@ body {
   left: 5.5px;
 }
 
-/* Думаю, тут можно сделать как-то проще, без флекса, но у меня не получилось,
-поэтому взял идею из макета. */
-
 .navigation-bottom-container {
   display: flex;
   align-items: center;
@@ -282,11 +282,7 @@ body {
   width: 475px;
   flex-wrap: wrap;
   align-self: flex-start;
-}
-
-.navigation-main .navigation-item:not(:nth-child(3n)) {
-  min-width: 121px;
-  margin-right: 45px;
+  justify-content: space-between;
 }
 
 .navigation-main,
@@ -317,7 +313,7 @@ body {
   border: 2px solid #000000;
   border-radius: 50%;
   opacity: 0.3;
-  transition: opacity 0.1s;
+  transition: opacity .15s;
 }
 
 .catalog-header:hover::after {
@@ -337,10 +333,9 @@ body {
 
 .navigation-main a {
   padding: 15px 0;
+  direction: rtl;
+  text-indent: -3.6px;
 }
-
-/* Контакты в меню почему-то не прижимаются к правому краю,
-не понимаю, в чём проблема. */
 
 .navigation-list {
   list-style-type: none;
@@ -359,6 +354,10 @@ body {
 }
 
 .navigation-catalog:active .catalog {
+  display: flex;
+}
+
+.navigation-catalog:focus-within .catalog {
   display: flex;
 }
 
@@ -398,6 +397,7 @@ body {
 /* Скрыты для удобства. */
 
 .slider-image {
+  display: block;
   margin: 0;
   width: 560px;
   margin-right: auto;
@@ -411,11 +411,10 @@ body {
 .slider-pagination {
   display: flex;
   flex-wrap: wrap;
-  width: 76px;
-  height: 12px;
-  margin: 0 auto;
+  justify-content: center;
   padding: 0;
   list-style-type: none;
+  margin: 0;
 }
 
 .slider-pagination-item {
@@ -435,6 +434,7 @@ body {
   border-radius: 50%;
   background-color: #ffffff;
   transition: opacity 0.05s;
+  cursor: pointer;
 }
 
 .slider-pagination-button-current {
@@ -450,6 +450,7 @@ body {
   right: -4px;
   bottom: -4px;
   border: 2px solid #AF4FFF;
+  transition: opacity .15s;
 }
 
 .slider-pagination-button:hover {
@@ -517,27 +518,18 @@ body {
 
 .slider-specs {
   display: flex;
-  margin-right: auto;
   list-style-type: none;
   padding: 0;
 }
 
-.slider-specs ul {
-  list-style-type: inherit;
-  padding: 0;
+.slider-specs li {
+  display: flex;
+  flex-direction: column;
   margin-right: 20px;
 }
 
-.slider-specs-bracelet {
-  flex-direction: column;
-}
-
-.slider-specs-monopod ul {
+.slider-specs-monopod li {
   margin-right: 40px;
-}
-
-.slider-specs tr:not(:last-child) {
-  margin-bottom: 12px;
 }
 
 .specs-value {
@@ -559,6 +551,13 @@ body {
   padding-left: 30px;
 }
 
+/* Если бы кнопки обрамляли весь слайд, а не только картинку,
+я бы добавил их в разметке в общую обёртку для слайдера,
+к списку слайдов, и выровнял бы по размеру этого блока, без учёта
+кругляшей пагинации. Но на макете они обрамляют именно изображение,
+поэтому было решено выравнивать их по featured и с указанием общей
+ширины для блока, чтобы разнести их по его краям. */
+
 .slider-button {
   width: 20px;
   height: 60px;
@@ -566,14 +565,11 @@ body {
   background-color: #ffffff;
   cursor: pointer;
   transition: opacity 0.05s;
-}
-
-.slider-prev {
-  background-image: url(../images/icons/arrow-left.svg);
+  background-image: url(../images/icons/arrow.svg)
 }
 
 .slider-next {
-  background-image: url(../images/icons/arrow-right.svg);
+  transform: rotate(180deg);
 }
 
 .slider-button:hover {
@@ -609,7 +605,7 @@ body {
   color: #000000;
   text-decoration: none;
   display: block;
-  transition: opacity 0.15s ease-out;
+  transition: opacity .15s;
 }
 
 /* Не понял пока, как поставить смене фона скорость. */
@@ -629,6 +625,7 @@ body {
 .product-categories-title {
   display: block;
   margin: 0;
+  font-size: inherit;
 }
 
 .product-categories-link:hover svg {
@@ -685,6 +682,7 @@ body {
 .advantages-button-current::before {
   background-color: black;
   width: 280px;
+  transform: translateY(0);
   height: 100%;
   top: 0;
 }
@@ -783,7 +781,7 @@ body {
   width: 1160px;
   margin-bottom: 70px;
   color: inherit;
-  transition: opacity 0.15s ease-out;
+  transition: opacity .15s;
 }
 
 .rare-item-order-button::before {
@@ -927,6 +925,7 @@ body {
   text-decoration: underline;
   text-transform: uppercase;
   color: #444444;
+  transition: opacity .15s;
 }
 
 .contacts-phone:hover {
@@ -988,9 +987,7 @@ body {
 }
 
 .newsletter-text {
-  max-width: 553px; /* ширина блока в макете выезжает за границу на
-  7 пикселей. Соответственно, тут либо давать заголовку точный марджин,
-  либо так и justify-content: space-between. */
+  max-width: 553px;
   margin: 0;
   padding-top: 10px;
 }
@@ -1016,7 +1013,7 @@ body {
   border: none;
   background-color: inherit;
   border-bottom: 3px solid #c4c4c4;
-  padding: 0;
+  padding: 0 16px;
 }
 
 .newsletter-button {
@@ -1030,8 +1027,7 @@ body {
   padding: 15px 36px;
   border: 3px solid #c4c4c4;
   box-sizing: border-box;
-  transition: active .15s ease-out; /* Тоже пока поставлено просто так,
-  кажется, оно не работает :) */
+  transition: background-color, color .15s;
 }
 
 .newsletter-button:hover {
@@ -1124,6 +1120,7 @@ body {
   font-style: normal;
   text-align: right;
   padding: 10px 0;
+  transition: color, opacity .15s;
 }
 
 .footer-contacts-phone-link:hover {
@@ -1160,13 +1157,14 @@ body {
   text-decoration: none;
   line-height: 20px;
   padding: 10px 0;
-  transition: hover active .15s ease-out;
+  transition: color, box-shadow, opacity .15s;
+  direction: rtl;
+  text-indent: -3.6px;
 }
 
 .footer-navigation-link:hover {
   color: #FFCC33;
-  border-bottom: 2px solid #FFCC33;
-  padding-bottom: 8px; /* Box-sizing почему-то не работает. */
+  box-shadow: 0 2px #FFCC33;
 }
 
 .footer-navigation-link:active {
@@ -1203,7 +1201,7 @@ body {
   margin-bottom: 15px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  transition: hover active .15s ease-out;
+  transition: .15s;
 }
 
 .social-button svg {
@@ -1223,6 +1221,7 @@ body {
   right: -4px;
   bottom: -4px;
   border: 2px solid #AF4FFF;
+  transition: background-color, opacity .15s;
 }
 
 .social-button:hover {
@@ -1245,6 +1244,7 @@ body {
   grid-area: academy;
   justify-self: end;
   align-self: center;
+  transition: fill, opacity .15s;
 }
 
 .footer-developer:hover .footer-developer-logo {
@@ -1318,6 +1318,7 @@ body {
 .breadcrumbs-link {
   text-decoration: none;
   color: #000000;
+  transition: opacity .15s;
 }
 
 .breadcrumbs-link:hover {
@@ -1425,6 +1426,7 @@ body {
   box-sizing: border-box;
   height: 30px;
   width: 30px;
+  transition: opacity .15s;
 }
 
 .button-icon {
@@ -1480,6 +1482,7 @@ body {
   grid-template-columns: min-content auto;
   text-decoration: none;
   color: inherit;
+  transition: opacity .15s;
 }
 
 .product-card-image {
@@ -1510,6 +1513,8 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   letter-spacing: 2.8px;
+  direction: rtl;
+  text-indent: -2.8px;
   text-transform: uppercase;
   opacity: 0.6;
   box-sizing: border-box;
@@ -1552,6 +1557,7 @@ body {
   background-color: #ffffff;
   box-sizing: border-box;
   border: 3px solid #E5E5E5;
+  transition: border-color, opacity .15s;
 }
 
 .pagination-more::before {
@@ -1595,6 +1601,7 @@ body {
   text-decoration: none;
   color: #444444;
   opacity: 0.3;
+  transition: opacity .15s;
 }
 
 .pagination-current {
