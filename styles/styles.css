@@ -190,28 +190,13 @@ body {
   position: relative;
 }
 
-.search-focus {
-  display: none;
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: 156px;
-  bottom: -4px;
-  border: 2px solid #AF4FFF;
-  z-index: 1;
-}
-
 .navigation-search:disabled {
   opacity: 0.3;
 }
 
 .navigation-search:focus {
-  outline: none;
-}
-
-.navigation-search:focus .search-focus {
-  display: block;
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .navigation-search-button {
@@ -437,38 +422,34 @@ body {
 }
 
 .cart-item-button {
-  display: flex;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.cart-item-button span {
+  display: block;
+  margin: 20px;
   padding: 20px;
   background-color: #ffffff;
   color: #000;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   letter-spacing: 3.6px;
-  margin: 0;
   line-height: normal;
   text-transform: uppercase;
   flex-grow: 1;
   text-indent: 3.6px;
+  cursor: pointer;
 }
 
-.cart-item-button:disabled span {
+.cart-item-button:disabled {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.cart-item-button:hover span {
+.cart-item-button:hover {
   background-color: #FFE17F;
 }
 
-.cart-item-button:active span {
+.cart-item-button:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.cart-item-button:focus span {
+.cart-item-button:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
 }
@@ -602,12 +583,16 @@ body {
   left: -60px;
   font-size: 16px;
   line-height: 18px;
+  column-count: 3;
+  column-gap: 30px;
+  column-width: 120px;
   background-color: #FFE17F;
   padding: 30px 60px 30px;
-  column-count: 3;
-  column-width: 215px;
-  column-gap: 30px;
   z-index: -1;
+}
+
+.catalog li {
+  margin-bottom: 20px;
 }
 
 .navigation-catalog:hover .catalog {
@@ -626,6 +611,7 @@ body {
 }
 
 .featured {
+  background: linear-gradient(#FFE17F 150px, white 150px);
   margin-bottom: 210px;
   margin-top: -37px;
   position: relative;
@@ -735,7 +721,6 @@ body {
   position: absolute;
   top: 29px;
   left: 261px;
-  background-color: #FFE17F;
   color: #ffffff;
   font-size: 180px;
   text-align: right;
@@ -743,7 +728,6 @@ body {
   margin-right: 50px;
   width: 250px;
   line-height: 0.75;
-  z-index: 1;
 }
 
 .slider-right-column-wrapper {
@@ -758,7 +742,7 @@ body {
   font-size: 50px;
   margin: 0;
   margin-bottom: 30px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .slider-text {
@@ -819,7 +803,7 @@ body {
   width: 20px;
   height: 60px;
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
   cursor: pointer;
   transition: opacity 0.05s;
   background-image: url(../images/icons/arrow.svg)
@@ -899,7 +883,9 @@ body {
 }
 
 .advantages-block {
-  background-color: #f0f0f0;
+  background: linear-gradient(white 102px, #f0f0f0 102px);
+  padding-bottom: 72px;
+  margin-bottom: 70px;
 }
 
 .advantages-wrapper {
@@ -907,7 +893,6 @@ body {
   width: 1160px;
   margin: 0 auto;
   padding: 0;
-  margin-bottom: 70px;
 }
 
 .advantages-menu,
@@ -1600,13 +1585,9 @@ body {
   display: flex;
 }
 
-.filter {
-  width: 320px;
-}
-
 .inner-left-column {
-  width: 260px;
-  margin-left: 60px;
+  width: 200px;
+  margin: 0 60px;
 }
 
 .inner-right-column {
@@ -1632,20 +1613,121 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.36px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 .inner-left-column fieldset {
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
   margin-bottom: 35px;
 }
 
-.filter-title {
-  margin: 0;
-  padding: 0;
+.inner-left-column fieldset:first-child {
+  margin-bottom: 55px;
 }
+
+/* Мне не очень нравится этот вариант,
+но инпуты с ценами так или иначе выбиваются
+из потока, поэтому это единственный способ
+добить нужную высоту. */
 
 .filter-list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  line-height: 20px;
+}
+
+.range-scale {
+  position: relative;
+  height: 2px;
+  background-color: #DCDCDC;
+}
+
+.range-bar {
+  position: absolute;
+  height: 2px;
+  background-color: black;
+}
+
+.toggle-min {
+  position: absolute;
+  top: -9px;
+  left: -9px;
+}
+
+.toggle-max {
+  position: absolute;
+  top: -9px;
+  right: 9px;
+}
+
+.range-toggle {
+  position: absolute;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  background-color: #EBEBEB;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  opacity: 0.5;
+}
+
+.range-toggle:active {
+  background-color: black;
+}
+
+.range-toggle:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
+}
+
+/* Изменить. */
+
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.catalog-filter-label {
+  position: absolute;
+  display: flex;
+  margin-top: 21px;
+  font-size: 14px;
+  opacity: 0.3;
+  transform: translateX(-25%);
+}
+
+/* Так инпуты ровно встают под тогглы,
+но левый оказывается смещен влево.
+Судя по гуглу, обхода этого варианта нет,
+разве что менять type=number на текст. */
+
+.range-input {
+  width: 34px;
+  padding: 0 2px;
+  appearance: textfield;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+}
+
+.filter-group .filter-item:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.filter-bluetooth .filter-item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .control {
@@ -1674,6 +1756,35 @@ body {
 .select-control {
   align-self: center;
   margin-right: auto;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  background-color: transparent;
+  border: none;
+  padding-right: 30px;
+  appearance: none;
+  background-image: url(../images/icons/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center right 9px;
+  direction: rtl;
+  transition: opacity .15s;
+}
+
+.select-control:disabled {
+  opacity: 0.1;
+}
+
+.select-control:hover {
+  opacity: 0.6;
+}
+
+.select-control:active {
+  opacity: 0.3;
+}
+
+.select-control:focus {
+  outline: 2px solid #AF4FFF;
+  outline-offset: 2px;
 }
 
 .sorter-button {
