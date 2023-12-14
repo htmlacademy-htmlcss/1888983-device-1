@@ -493,7 +493,7 @@
 
     </footer>
 
-    <div class="modal-container"> <!-- modal-container-close -->
+    <div class="modal-container modal-container-close">
       <div class="modal modal-rare-item-order">
         <div class="modal-header">
           <h2 class="modal-title">Доставка под заказ</h2>
@@ -517,7 +517,14 @@
               <input class="rare-item-order-field description-field" type="text" name="rare-item-order-description" id="description" placeholder="В свободной форме">
             </div>
             <div class="field-group">
-              <label class="field-title" for="quantity">Количество:</label>
+              <span class="field-title field-title-icon">
+                <label class="field-title" for="quantity">Количество:</label>
+                <span class="tooltip">
+                  <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-quantity"></button>
+                </span>
+                <span id="tooltip-label-quantity" class="tooltip-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям
+                  к провозу багажа.</span>
+              </span>
               <div class="quantity-wrapper">
                 <button class="field-button button-minus" type="button">
                   <span class="visually-hidden">Меньше.</span>

@@ -872,8 +872,6 @@ label:focus-within {
   transition: opacity .15s;
 }
 
-/* Не понял пока, как поставить смене фона скорость. */
-
 .product-categories-list-item:not(:last-child) {
   width: 160px;
   margin: 0;
@@ -884,6 +882,7 @@ label:focus-within {
 .product-categories-list-item svg {
   background-color: #FFE17F;
   margin-bottom: 32px;
+  transition: all .15s;
 }
 
 .product-categories-title {
@@ -951,9 +950,6 @@ label:focus-within {
   top: 0;
 }
 
-/* Я не уверен, что такая перезапись псевдоэлементов —
-это хорошо, но оно работает. :) */
-
 .advantages-button-current:hover,
 .advantages-button-current:active,
 .advantages-button-current:focus {
@@ -1011,9 +1007,6 @@ label:focus-within {
   background-position: center right;
   background-size: 136px 164px;
 }
-
-/* Скрыты для удобства. Не придумал, как их иначе центровать,
-кроме как отступами. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
@@ -1566,6 +1559,7 @@ label:focus-within {
 
 .modal-rare-item-order {
   width: 920px;
+  box-sizing: border-box;
 }
 
 .modal-header {
@@ -1619,7 +1613,7 @@ label:focus-within {
   margin: 0;
   padding: 0;
   margin-bottom: 42px;
-  min-width: 180px;
+  max-width: min-content;
 }
 
 .field-group:nth-child(odd) {
@@ -1696,6 +1690,61 @@ label:focus-within {
 
 .description-field {
   width: 540px;
+}
+
+.field-title-icon {
+  position: relative;
+  padding-right: 26px;
+}
+
+.tooltip {
+  position: absolute;
+  margin-left: 8px;
+  top: -3px;
+}
+
+.tooltip-toggle {
+  border: none;
+  border-radius: 50%;
+  background-color: #FFE17F;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-image: url(../images/icons/info.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tooltip-text {
+  display: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  width: 160px;
+  padding: 20px;
+  position: absolute;
+  margin-top: 13px;
+  z-index: 1;
+}
+
+.tooltip-text::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/icons/triangle.svg);
+  width: 14px;
+  height: 6px;
+  top: -6px;
+  right: 54px;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover + .tooltip-text,
+.tooltip:focus-within + .tooltip-text {
+  display: block;
 }
 
 .quantity-wrapper {
@@ -1997,7 +2046,7 @@ label:focus-within {
 /* Так инпуты ровно встают под тогглы,
 но левый оказывается смещен влево.
 Судя по гуглу, обхода этого варианта нет,
-разве что менять type=number на текст. */
+разве что менять type="number" на текст. */
 
 .range-input {
   width: 34px;
