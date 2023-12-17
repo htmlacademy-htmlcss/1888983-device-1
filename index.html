@@ -14,8 +14,10 @@
         </a>
         <div class="navigation-middle-container">
           <form class="search-field" action="https://echo.htmlacademy.ru/" method="get">
-            <label for="search" class="visually-hidden">Поиск по сайту</label>
-            <input class="navigation-search" placeholder="Поиск по сайту" type="text" name="search" id="search">
+            <label>
+              <span class="visually-hidden">Поиск по сайту</span>
+              <input class="navigation-search" placeholder="Поиск по сайту" type="text" name="search" id="search">
+            </label>
             <button class="navigation-search-button" type="submit">Найти</button>
            </form>
           <ul class="navigation-list navigation-login">
@@ -31,11 +33,41 @@
                 <span class="navigation-compare">Сравнить</span>
               </a>
             </li>
-            <li class="navigation-item">
+            <li class="navigation-item item-cart">
               <a class="navigation-link cart-link" href="#">
                 <span class="notification-badge">2</span>
                 <span class="navigation-cart">Корзина</span>
               </a>
+              <div class="popover popover-cart">
+                <div class="popover-content">
+                  <h2 class="visually-hidden">Корзина</h2>
+                  <ul class="cart-list">
+                    <li class="cart-item">
+                      <a class="cart-item-link">
+                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39px" height="43px" alt="">
+                        <p class="cart-item-title">Любительская селфи-палка</p>
+                      </a>
+                      <button class="cart-button-close" type="button">
+                        <span class="visually-hidden">Удалить из корзины</span>
+                      </button>
+                    </li>
+                    <li class="cart-item">
+                      <a class="cart-item-link">
+                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39px" height="43px" alt="">
+                        <p class="cart-item-title">Профессиональная селфи-палка</p>
+                      </a>
+                      <button class="cart-button-close" type="button">
+                        <span class="visually-hidden">Удалить из корзины</span>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="cart-specs">
+                    <p class="cart-items-count">Товаров: 2</p>
+                    <p class="cart-items-price">Сумма: 2000 ₽</p>
+                  </div>
+                  <a class="cart-item-button">Открыть корзину</a>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -43,6 +75,7 @@
           <div class="navigation-catalog">
             <a class="catalog-header" href="#">
               Каталог товаров
+              <span class="catalog-button"></span>
             </a>
             <ul class="navigation-list catalog">
               <li class="navigation-item">
@@ -100,16 +133,12 @@
                   <h3 class="visually-hidden">Ключевые особенности квадрокоптера.</h3>
                   <ul class="slider-specs">
                     <li>
-                      <ul>
-                        <li class="specs-value">800 м</li>
-                        <li class="specs-option">Дальность полета</li>
-                      </ul>
+                      <strong class="specs-value">800 м</strong>
+                      <span class="specs-option">Дальность полета</span>
                     </li>
                     <li>
-                      <ul>
-                        <li class="specs-value">50 м</li>
-                        <li class="specs-option">Радиус поражения</li>
-                      </ul>
+                      <strong class="specs-value">50 м</strong>
+                      <span class="specs-option">Радиус поражения</span>
                     </li>
                   </ul>
                 </div>
@@ -126,8 +155,10 @@
                   <a class="button" href="#">Подробнее</a>
                   <h3 class="visually-hidden">Ключевые особенности фитнес-браслета.</h3>
                   <ul class="slider-specs slider-specs-bracelet">
-                    <li class="specs-value">48 часов</li>
-                    <li class="specs-option">Без подзарядки</li>
+                    <li>
+                      <strong class="specs-value">48 часов</strong>
+                      <span class="specs-option">Без подзарядки</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -144,22 +175,16 @@
                   <h3 class="visually-hidden">Ключевые особенности селфи-палки.</h3>
                   <ul class="slider-specs slider-specs-monopod">
                     <li>
-                      <ul>
-                        <li class="specs-value">8,5 м</li>
-                        <li class="specs-option">Длина палки</li>
-                      </ul>
+                      <strong class="specs-value">8,5 м</strong>
+                      <span class="specs-option">Длина палки</span>
                     </li>
                     <li>
-                      <ul>
-                        <li class="specs-value">5 кг</li>
-                        <li class="specs-option">Вес палки</li>
-                      </ul>
+                      <strong class="specs-value">5 кг</strong>
+                      <span class="specs-option">Вес палки</span>
                     </li>
                     <li>
-                      <ul>
-                        <li class="specs-value">Карбон</li>
-                        <li class="specs-option">Материал</li>
-                      </ul>
+                      <strong class="specs-value">Карбон</strong>
+                      <lspani class="specs-option">Материал</span>
                     </li>
                   </ul>
                 </div>
@@ -468,6 +493,52 @@
 
     </footer>
 
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-rare-item-order">
+        <div class="modal-header">
+          <h2 class="modal-title">Доставка под заказ</h2>
+          <button class="modal-close-button" type="button">
+            <span class="visually-hidden">Закрыть.</span>
+          </button>
+        </div>
+        <form class="rare-item-order-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="field-group">
+              <label class="field-title" for="name">Ваше имя:</label>
+              <input class="rare-item-order-field name-field" type="text" name="rare-item-order-name" id="name" placeholder="Введите имя">
+              <span class="field-note">Введите имя</span>
+            </div>
+            <div class="field-group">
+              <label class="field-title" for="email">Ваше e-mail:</label>
+              <input class="rare-item-order-field email-field" type="text" name="rare-item-order-email" id="email" placeholder="Введите e-mail" required>
+              <span class="field-note field-error">Забавный у вас адрес</span>
+            </div>
+            <div class="field-group">
+              <label class="field-title" for="description">Что нужно привезти:</label>
+              <input class="rare-item-order-field description-field" type="text" name="rare-item-order-description" id="description" placeholder="В свободной форме">
+            </div>
+            <div class="field-group">
+              <span class="field-title field-title-icon">
+                <label class="field-title" for="quantity">Количество:</label>
+                <span class="tooltip">
+                  <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-quantity"></button>
+                </span>
+                <span id="tooltip-label-quantity" class="tooltip-text">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям
+                  к провозу багажа.</span>
+              </span>
+              <div class="quantity-wrapper">
+                <button class="field-button button-minus" type="button">
+                  <span class="visually-hidden">Меньше.</span>
+                </button>
+                <input class="rare-item-order-field quantity-field" type="text" name="rare-item-order-quantity" id="quantity" value="1">
+                <button class="field-button button-plus" type="button">
+                  <span class="visually-hidden">Больше.</span>
+                </button>
+              </div>
+            </div>
+            <button class="button modal-button" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
 
 
 
