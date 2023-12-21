@@ -27,10 +27,11 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  min-width: 1440px;
   min-height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 30px;
@@ -68,15 +69,16 @@ body {
   position: absolute;
   width: 100%;
   height: 8px;
-  top:16px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   background-color: #FFE17F;
   z-index: -2;
-  transition: all .15s;
+  transition: all 00.15s;
 }
 
 .button:hover::before {
-  transform: scale(1, 5);
+  height: 100%;
 }
 
 .button:active {
@@ -111,7 +113,6 @@ body {
 .page-header {
   width: 1160px;
   color: #000000;
-  background-color: #FFE17F;
   margin: 0 auto;
   margin-top: 35px;
 }
@@ -125,6 +126,7 @@ body {
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 0 60px;
+  background-color: #FFE17F;
 }
 
 .navigation-logo {
@@ -136,7 +138,7 @@ body {
 
 .logo {
   cursor: pointer;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .logo:hover {
@@ -177,9 +179,7 @@ body {
   padding: 10px 16px;
   padding-left: 48px;
   background-color: #FFE17F;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
+  border: 2px solid #000000;
   border-right: none;
   border-radius: 50px 0 0 50px;
   box-sizing: border-box;
@@ -214,10 +214,10 @@ body {
   width: 160px;
   padding: 10px;
   box-sizing: border-box;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 0 50px 50px 0;
   background-color: #FFE17F;
-  transition: background-color, color .15s;
+  transition: background-color, color 0.15s;
 }
 
 .navigation-search-button::after {
@@ -237,7 +237,7 @@ body {
 }
 
 .navigation-search-button:hover {
-  background-color: black;
+  background-color: #000000;
   color: #ffffff;
 }
 
@@ -270,12 +270,12 @@ body {
 }
 
 .navigation-link {
-  display: block;
+  display: inline-block;
   color: #000000;
   text-align: left;
   text-decoration: none;
   margin: 0;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .navigation-link:hover {
@@ -289,6 +289,10 @@ body {
 .navigation-link:focus {
   outline: 2px solid #AF4FFF;
   outline-offset: 2px;
+}
+
+.navigation-link-current {
+  border-bottom: 1px solid #000000;
 }
 
 .navigation-logout {
@@ -368,7 +372,7 @@ body {
   display: flex;
   cursor: pointer;
   margin-right: auto;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
   text-decoration: none;
   color: #ffffff;
 }
@@ -538,7 +542,7 @@ body {
   border: 2px solid #000000;
   border-radius: 50%;
   opacity: 0.3;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .catalog-button::before,
@@ -594,7 +598,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
-  height: 180px;
+  height: 182px;
   width: 1160px;
   top: 34px;
   left: -60px;
@@ -633,7 +637,7 @@ body {
 }
 
 .featured {
-  background: linear-gradient(#FFE17F 150px, white 150px);
+  background: linear-gradient(#FFE17F 150px, #ffffff 150px);
   margin-bottom: 210px;
   margin-top: -37px;
   position: relative;
@@ -695,7 +699,7 @@ body {
   width: 12px;
   height: 12px;
   padding: 0;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 50%;
   background-color: #ffffff;
   transition: opacity 0.05s;
@@ -715,7 +719,7 @@ body {
   right: -4px;
   bottom: -4px;
   border: 2px solid #AF4FFF;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .slider-pagination-button:hover {
@@ -855,7 +859,6 @@ body {
 .product-categories-list {
   list-style-type: none;
   display: flex;
-  width: 1160px;
   margin: 0;
   padding: 0;
   margin-bottom: 70px;
@@ -868,7 +871,7 @@ body {
   color: #000000;
   text-decoration: none;
   display: block;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .product-categories-list-item:not(:last-child) {
@@ -881,7 +884,7 @@ body {
 .product-categories-list-item svg {
   background-color: #FFE17F;
   margin-bottom: 32px;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
 .product-categories-title {
@@ -904,7 +907,7 @@ body {
 }
 
 .advantages-block {
-  background: linear-gradient(white 102px, #f0f0f0 102px);
+  background: linear-gradient(#ffffff 102px, #f0f0f0 102px);
   padding-bottom: 72px;
   margin-bottom: 70px;
 }
@@ -928,7 +931,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 287px;
-  border-right: 7px solid black;
+  border-right: 7px solid #000000;
   box-sizing: border-box;
 }
 
@@ -943,10 +946,11 @@ body {
 }
 
 .advantages-button-current::before {
-  background-color: black;
+  background-color: #000000;
   width: 280px;
   height: 100%;
   top: 0;
+  transform: none;
 }
 
 .advantages-button-current:hover,
@@ -956,13 +960,8 @@ body {
   outline: none;
 }
 
-.advantages-button-current:hover::before {
-  transform: scale(1, 1);
-}
-
-
 .advantages-button-current:active::before {
-  background-color: black;
+  background-color: #000000;
 }
 
 .advantages-menu-item:not(:last-child) {
@@ -1034,10 +1033,9 @@ body {
   text-decoration: none;
   background-color: #f0f0f0;
   box-sizing: border-box;
-  width: 1160px;
   margin-bottom: 70px;
   color: inherit;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .rare-item-order-button::before {
@@ -1137,7 +1135,6 @@ body {
 
 .about-wrapper {
   display: flex;
-  width: 1160px;
   justify-content: space-between;
   margin-bottom: 70px;
 }
@@ -1181,7 +1178,7 @@ body {
   text-decoration: underline;
   text-transform: uppercase;
   color: #444444;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .contacts-phone:hover {
@@ -1293,7 +1290,7 @@ body {
   padding: 15px 36px;
   border: 3px solid #c4c4c4;
   box-sizing: border-box;
-  transition: background-color, color .15s;
+  transition: background-color, color 0.15s;
 }
 
 .newsletter-button:hover {
@@ -1390,7 +1387,7 @@ body {
   font-style: normal;
   text-align: right;
   padding: 10px 0;
-  transition: color, opacity .15s;
+  transition: color, opacity 0.15s;
 }
 
 .footer-contacts-phone-link:hover {
@@ -1427,7 +1424,7 @@ body {
   text-decoration: none;
   line-height: 20px;
   padding: 10px 0;
-  transition: color, box-shadow, opacity .15s;
+  transition: color, box-shadow, opacity 0.15s;
   direction: rtl;
   text-indent: -3.6px;
 }
@@ -1471,7 +1468,7 @@ body {
   margin-bottom: 15px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  transition: .15s;
+  transition: 0.15s;
 }
 
 .social-button svg {
@@ -1491,7 +1488,7 @@ body {
   right: -4px;
   bottom: -4px;
   border: 2px solid #AF4FFF;
-  transition: background-color, opacity .15s;
+  transition: background-color, opacity 0.15s;
 }
 
 .social-button:hover {
@@ -1514,7 +1511,7 @@ body {
   grid-area: academy;
   justify-self: end;
   align-self: center;
-  transition: fill, opacity .15s;
+  transition: fill, opacity 0.15s;
 }
 
 .footer-developer:hover .footer-developer-logo {
@@ -1549,8 +1546,8 @@ body {
   position: relative;
   margin: auto;
   padding: 72px 80px;
-  border: 10px solid black;
-  background-color: white;
+  border: 10px solid #000000;
+  background-color: #ffffff;
 }
 
 .modal-rare-item-order {
@@ -1634,7 +1631,7 @@ body {
   background-color: #F0F0F0;
   border: none;
   box-sizing: border-box;
-  transition: background-color .15s;
+  transition: background-color 0.15s;
 }
 
 .rare-item-order-field::placeholder {
@@ -1816,13 +1813,12 @@ body {
   background-color: #ffffff;
   color: #000000;
   flex-grow: 1;
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .inner-header {
-  width: 1160px;
-  margin: 0 auto;
   padding: 35px 21px 34px 60px;
-  box-sizing: border-box;
 }
 
 .catalog-products {
@@ -1870,7 +1866,7 @@ body {
 .breadcrumbs-link {
   text-decoration: none;
   color: #000000;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .breadcrumbs-link:hover {
@@ -1891,8 +1887,6 @@ body {
 }
 
 .inner-wrapper {
-  width: 1160px;
-  margin: 0 auto;
   display: flex;
 }
 
@@ -1929,7 +1923,7 @@ body {
   margin-bottom: 20px;
   width: 100%;
   padding-top: 12px;
-  border-top: 2px solid black;
+  border-top: 2px solid #000000;
 }
 
 .inner-left-column fieldset {
@@ -1964,7 +1958,7 @@ body {
 .range-bar {
   position: absolute;
   height: 2px;
-  background-color: black;
+  background-color: #000000;
 }
 
 .toggle-min {
@@ -1985,7 +1979,7 @@ body {
   width: 18px;
   height: 18px;
   background-color: #EBEBEB;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -1999,7 +1993,7 @@ body {
   right: -4px;
   bottom: -4px;
   border: 2px solid #AF4FFF;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
 .range-toggle:hover {
@@ -2007,7 +2001,7 @@ body {
 }
 
 .range-toggle:active {
-  background-color: black;
+  background-color: #000000;
 }
 
 .range-toggle:focus::after {
@@ -2058,7 +2052,7 @@ body {
   position: absolute;
   height: 20px;
   width: 20px;
-  border: 2px solid black;
+  border: 2px solid #000000;
   left: 0;
   box-sizing: border-box;
   border-radius: 3px;
@@ -2073,7 +2067,7 @@ body {
   right: -6px;
   bottom: -6px;
   border: 2px solid #AF4FFF;
-  transition: all .15s;
+  transition: all 0.15s;
 }
 
 .control:disabled + .control-mark {
@@ -2176,7 +2170,7 @@ body {
   box-sizing: border-box;
   height: 30px;
   width: 30px;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .button-icon {
@@ -2232,7 +2226,7 @@ body {
   grid-template-columns: min-content auto;
   text-decoration: none;
   color: inherit;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .product-card-image {
@@ -2270,7 +2264,7 @@ body {
   box-sizing: border-box;
   width: 60px;
   height: 60px;
-  border: 2px solid black;
+  border: 2px solid #000000;
   border-radius: 50%;
   top: 27px;
   right: 27px;
@@ -2307,7 +2301,7 @@ body {
   background-color: #ffffff;
   box-sizing: border-box;
   border: 3px solid #E5E5E5;
-  transition: border-color, opacity .15s;
+  transition: border-color, opacity 0.15s;
 }
 
 .pagination-more::before {
@@ -2355,7 +2349,7 @@ body {
   text-decoration: none;
   color: #444444;
   opacity: 0.3;
-  transition: opacity .15s;
+  transition: opacity 0.15s;
 }
 
 .pagination-current {

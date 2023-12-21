@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
     <link href="styles/styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" size="32x32" href="images/icons/favicon.png">
   </head>
 
   <body>
@@ -44,7 +46,7 @@
                   <ul class="cart-list">
                     <li class="cart-item">
                       <a class="cart-item-link" href="#">
-                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39px" height="43px" alt="">
+                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Любительская селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -53,7 +55,7 @@
                     </li>
                     <li class="cart-item">
                       <a class="cart-item-link" href="#">
-                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39px" height="43px" alt="">
+                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Профессиональная селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -100,7 +102,7 @@
           </div>
           <ul class="navigation-list navigation-main">
             <li class="navigation-item">
-              <a class="navigation-link" href="#">Доставка</a>
+              <a class="navigation-link" href="#delivery">Доставка</a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="#">Гарантия</a>
@@ -184,7 +186,7 @@
                     </li>
                     <li>
                       <strong class="specs-value">Карбон</strong>
-                      <lspani class="specs-option">Материал</span>
+                      <span class="specs-option">Материал</span>
                     </li>
                   </ul>
                 </div>
@@ -312,7 +314,7 @@
             </li>
           </ul>
           <ul class="advantages">
-            <li class="advantages-item advantages-delivery">
+            <li class="advantages-item advantages-delivery" id="delivery">
               <h3 class="advantages-header">Доставка</h3>
               <p class="advantages-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
             </li>
@@ -400,13 +402,13 @@
           <img class="footer-contacts-logo" src="images/icons/logo-footer.svg" width="145" height="36" alt="Логотип магазина «Девайс».">
         </a>
         <address class="footer-contacts-address">
-          <h2 class="visually-hidden">Адрес</h2>
+          <span class="visually-hidden">Адрес</span>
           <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
         </address>
 
         <ul class="footer-navigation-list">
           <li class="footer-navigation-item">
-            <a class="footer-navigation-link" href="#">Доставка</a>
+            <a class="footer-navigation-link" href="#delivery">Доставка</a>
           </li>
           <li class="footer-navigation-item">
             <a class="footer-navigation-link" href="#">Гарантия</a>
@@ -417,7 +419,7 @@
         </ul>
 
         <address class="footer-contacts-phone">
-          <h2 class="visually-hidden">Телефон</h2>
+          <span class="visually-hidden">Телефон</span>
           <a class="footer-contacts-phone-link" href="tel:78128121212">Тел.: +7 (812) 812-12-12</a>
         </address>
 
@@ -504,12 +506,12 @@
         <form class="rare-item-order-form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="field-group">
               <label class="field-title" for="name">Ваше имя:</label>
-              <input class="rare-item-order-field name-field" type="text" name="rare-item-order-name" id="name" placeholder="Введите имя">
+              <input class="rare-item-order-field name-field" type="text" name="rare-item-order-name" id="name" placeholder="Введите имя" autocomplete="on">
               <span class="field-note">Введите имя</span>
             </div>
             <div class="field-group">
               <label class="field-title" for="email">Ваше e-mail:</label>
-              <input class="rare-item-order-field email-field" type="text" name="rare-item-order-email" id="email" placeholder="Введите e-mail" required>
+              <input class="rare-item-order-field email-field" type="text" name="rare-item-order-email" id="email" placeholder="Введите e-mail" autocomplete="on" required>
               <span class="field-note field-error">Забавный у вас адрес</span>
             </div>
             <div class="field-group">
