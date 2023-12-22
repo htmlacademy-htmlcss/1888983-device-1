@@ -139,11 +139,11 @@
 
       <div class="grey-wrapper">
         <div class="inner-wrapper">
-          <section class="filter">
+          <section class="filter-wrapper">
             <div class="inner-left-column">
               <h2 class="filter-header">Фильтр:</h2>
               <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-                <fieldset class="filter-price">
+                <fieldset class="filter filter-price">
                   <legend class="filter-title">Стоимость</legend>
                   <div class="range-scale">
                     <div class="range-bar" style="left: 0; width: 119px">
@@ -151,7 +151,7 @@
                         <button class="range-toggle">
                           <span class="visually-hidden">Изменить минимальную цену.</span>
                         </button>
-                        <label class="catalog-filter-label">
+                        <label class="catalog-filter-label label-min">
                           от <input class="range-input" type="number" value="0" name="min-price">
                         </label>
                       </div>
@@ -159,14 +159,14 @@
                         <button class="range-toggle">
                           <span class="visually-hidden">Изменить максимальную цену.</span>
                         </button>
-                        <label class="catalog-filter-label">
-                          до <input class="range-input" type="number" value="1500" name="max-price">
+                        <label class="catalog-filter-label label-max">
+                          до <input class="range-input" type="number" value="5000" name="max-price">
                         </label>
                       </div>
                     </div>
                   </div>
                 </fieldset>
-                <fieldset class="filter-group">
+                <fieldset class="filter filter-group">
                   <legend class="filter-title">Цвет</legend>
                   <ul class="filter-list">
                     <li class="filter-item">
@@ -206,7 +206,7 @@
                     </li>
                   </ul>
                 </fieldset>
-                <fieldset class="filter-bluetooth">
+                <fieldset class="filter filter-bluetooth">
                   <legend class="filter-title">Bluetooth</legend>
                   <ul class="filter-list">
                     <li class="filter-item">
@@ -272,7 +272,7 @@
                 <li class="product-card">
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-amateur.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Любительская селфи-палка</h3>
+                    <h3 class="product-card-title">Любительская<br>селфи-палка</h3>
                     <b class="product-card-price">500 ₽</b>
                   </a>
                   <a class="button" href="#">Подробнее</a>
@@ -281,23 +281,23 @@
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-professional.jpg" width="360" height="380" alt="">
                     <h3 class="product-card-title">Профессиональная селфи-палка</h3>
-                    <b class="product-card-price">1500 ₽</b>
+                    <b class="product-card-price">1 500 ₽</b>
                   </a>
                   <a class="button" href="#">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link product-card-new" href="#">
                     <img class="product-card-image" src="images/content/monopod-unsinkable.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Непотопляемая селфи-палка</h3>
-                    <b class="product-card-price">2500 ₽</b>
+                    <h3 class="product-card-title">Непотопляемая<br>селфи-палка</h3>
+                    <b class="product-card-price">2 500 ₽</b>
                   </a>
                   <a class="button" href="#">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-follow-me.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Селфи-палка «Следуй за мной»</h3>
-                    <b class="product-card-price">1500 ₽</b>
+                    <h3 class="product-card-title">Селфи-палка&nbsp;«Следуй за мной»</h3>
+                    <b class="product-card-price">1 500 ₽</b>
                   </a>
                   <a class="button" href="#">Подробнее</a>
                 </li>
@@ -322,7 +322,7 @@
                     <a class="pagination-link" href="#">15</a>
                   </li>
                 </ol>
-                  <a class="pagination-button pagination-actived" href="#">Вперёд</a>
+                  <a class="pagination-button pagination-activated" href="#">Вперёд</a>
               </div>
             </section>
           </div>
