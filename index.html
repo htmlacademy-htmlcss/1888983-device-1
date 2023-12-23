@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
     <link href="styles/styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.png">
   </head>
 
   <body>
@@ -14,7 +16,7 @@
         </a>
         <div class="navigation-middle-container">
           <form class="search-field" action="https://echo.htmlacademy.ru/" method="get">
-            <label>
+            <label class="search-label">
               <span class="visually-hidden">Поиск по сайту</span>
               <input class="navigation-search" placeholder="Поиск по сайту" type="text" name="search" id="search">
             </label>
@@ -43,8 +45,8 @@
                   <h2 class="visually-hidden">Корзина</h2>
                   <ul class="cart-list">
                     <li class="cart-item">
-                      <a class="cart-item-link">
-                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39px" height="43px" alt="">
+                      <a class="cart-item-link" href="#">
+                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Любительская селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -52,8 +54,8 @@
                       </button>
                     </li>
                     <li class="cart-item">
-                      <a class="cart-item-link">
-                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39px" height="43px" alt="">
+                      <a class="cart-item-link" href="#">
+                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Профессиональная селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -65,7 +67,7 @@
                     <p class="cart-items-count">Товаров: 2</p>
                     <p class="cart-items-price">Сумма: 2000 ₽</p>
                   </div>
-                  <a class="cart-item-button">Открыть корзину</a>
+                  <a class="cart-item-button" href="#">Открыть корзину</a>
                 </div>
               </div>
             </li>
@@ -100,7 +102,7 @@
           </div>
           <ul class="navigation-list navigation-main">
             <li class="navigation-item">
-              <a class="navigation-link" href="#">Доставка</a>
+              <a class="navigation-link" href="#delivery">Доставка</a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="#">Гарантия</a>
@@ -110,7 +112,7 @@
             </li>
           </ul>
         </div>
-        </nav>
+      </nav>
 
     </header>
 
@@ -184,7 +186,7 @@
                     </li>
                     <li>
                       <strong class="specs-value">Карбон</strong>
-                      <lspani class="specs-option">Материал</span>
+                      <span class="specs-option">Материал</span>
                     </li>
                   </ul>
                 </div>
@@ -258,9 +260,6 @@
                 <h3 class="product-categories-title">Экшн-камеры</h3>
               </a>
             </li>
-
-            <!-- В макете для экше-камеры указан неправильный значок, взял из стайлгайда. -->
-
             <li class="product-categories-list-item">
               <a class="product-categories-link" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" fill="none">
@@ -312,9 +311,9 @@
             </li>
           </ul>
           <ul class="advantages">
-            <li class="advantages-item advantages-delivery">
+            <li class="advantages-item advantages-delivery" id="delivery">
               <h3 class="advantages-header">Доставка</h3>
-              <p class="advantages-description">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+              <p class="advantages-description">Мы с удовольствием доставим ваш товар прямо к&nbsp;вашему подъезду совершенно бесплатно! Ведь<br>мы неплохо заработаем, поднимая его на ваш этаж.</p>
             </li>
             <li class="advantages-item advantages-warranty">
               <h3 class="advantages-header">Гарантия</h3>
@@ -378,7 +377,7 @@
       <section class="newsletter">
         <div class="newsletter-wrapper">
           <h2 class="newsletter-title">Подпишитесь на рассылку</h2>
-          <p class="newsletter-text">Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
+          <p class="newsletter-text">Еженедельный дайджест с обзорами новинок,<br>длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
         </div>
         <div class="newsletter-form-wrapper">
           <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -400,13 +399,13 @@
           <img class="footer-contacts-logo" src="images/icons/logo-footer.svg" width="145" height="36" alt="Логотип магазина «Девайс».">
         </a>
         <address class="footer-contacts-address">
-          <h2 class="visually-hidden">Адрес</h2>
+          <span class="visually-hidden">Адрес</span>
           <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
         </address>
 
         <ul class="footer-navigation-list">
           <li class="footer-navigation-item">
-            <a class="footer-navigation-link" href="#">Доставка</a>
+            <a class="footer-navigation-link" href="#delivery">Доставка</a>
           </li>
           <li class="footer-navigation-item">
             <a class="footer-navigation-link" href="#">Гарантия</a>
@@ -417,7 +416,7 @@
         </ul>
 
         <address class="footer-contacts-phone">
-          <h2 class="visually-hidden">Телефон</h2>
+          <span class="visually-hidden">Телефон</span>
           <a class="footer-contacts-phone-link" href="tel:78128121212">Тел.: +7 (812) 812-12-12</a>
         </address>
 
@@ -504,12 +503,12 @@
         <form class="rare-item-order-form" action="https://echo.htmlacademy.ru/" method="post">
             <div class="field-group">
               <label class="field-title" for="name">Ваше имя:</label>
-              <input class="rare-item-order-field name-field" type="text" name="rare-item-order-name" id="name" placeholder="Введите имя">
+              <input class="rare-item-order-field name-field" type="text" name="rare-item-order-name" id="name" placeholder="Введите имя" autocomplete="on">
               <span class="field-note">Введите имя</span>
             </div>
             <div class="field-group">
-              <label class="field-title" for="email">Ваше e-mail:</label>
-              <input class="rare-item-order-field email-field" type="text" name="rare-item-order-email" id="email" placeholder="Введите e-mail" required>
+              <label class="field-title" for="email">Ваш e-mail:</label>
+              <input class="rare-item-order-field email-field" type="email" name="rare-item-order-email" id="email" placeholder="Введите e-mail" autocomplete="on" required>
               <span class="field-note field-error">Забавный у вас адрес</span>
             </div>
             <div class="field-group">

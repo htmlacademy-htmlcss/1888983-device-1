@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
     <link href="styles/styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.png">
   </head>
 
   <body>
@@ -14,7 +16,7 @@
         </a>
         <div class="navigation-middle-container">
           <form class="search-field" action="https://echo.htmlacademy.ru/" method="get">
-            <label>
+            <label class="search-label">
               <span class="visually-hidden">Поиск по сайту</span>
               <input class="navigation-search" placeholder="Поиск по сайту" type="text" name="search" id="search">
             </label>
@@ -48,8 +50,8 @@
                   <h2 class="visually-hidden">Корзина</h2>
                   <ul class="cart-list">
                     <li class="cart-item">
-                      <a class="cart-item-link">
-                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39px" height="43px" alt="">
+                      <a class="cart-item-link" href="#">
+                        <img class="cart-item-image" src="images/content/monopod-amateur.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Любительская селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -57,8 +59,8 @@
                       </button>
                     </li>
                     <li class="cart-item">
-                      <a class="cart-item-link">
-                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39px" height="43px" alt="">
+                      <a class="cart-item-link" href="#">
+                        <img class="cart-item-image" src="images/content/monopod-professional.jpg" width="39" height="43" alt="">
                         <p class="cart-item-title">Профессиональная селфи-палка</p>
                       </a>
                       <button class="cart-button-close" type="button">
@@ -70,7 +72,7 @@
                     <p class="cart-items-count">Товаров: 2</p>
                     <p class="cart-items-price">Сумма: 2000 ₽</p>
                   </div>
-                  <a class="cart-item-button">Открыть корзину</a>
+                  <a class="cart-item-button" href="#">Открыть корзину</a>
                 </div>
               </div>
             </li>
@@ -87,7 +89,7 @@
                 <a class="navigation-link" href="#">Виртуальная реальность</a>
               </li>
               <li class="navigation-item">
-                <a class="navigation-link" href="catalog.html">Моноподы для селфи</a>
+                <a class="navigation-link navigation-link-current">Моноподы для селфи</a>
               </li>
               <li class="navigation-item">
                 <a class="navigation-link" href="#">Экшн-камеры</a>
@@ -105,7 +107,7 @@
           </div>
           <ul class="navigation-list navigation-main">
             <li class="navigation-item">
-              <a class="navigation-link" href="#">Доставка</a>
+              <a class="navigation-link" href="index.html#delivery">Доставка</a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link" href="#">Гарантия</a>
@@ -137,11 +139,11 @@
 
       <div class="grey-wrapper">
         <div class="inner-wrapper">
-          <section class="filter">
+          <section class="filter-wrapper">
             <div class="inner-left-column">
               <h2 class="filter-header">Фильтр:</h2>
               <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-                <fieldset class="filter-price">
+                <fieldset class="filter filter-price">
                   <legend class="filter-title">Стоимость</legend>
                   <div class="range-scale">
                     <div class="range-bar" style="left: 0; width: 119px">
@@ -149,7 +151,7 @@
                         <button class="range-toggle">
                           <span class="visually-hidden">Изменить минимальную цену.</span>
                         </button>
-                        <label class="catalog-filter-label">
+                        <label class="catalog-filter-label label-min">
                           от <input class="range-input" type="number" value="0" name="min-price">
                         </label>
                       </div>
@@ -157,68 +159,68 @@
                         <button class="range-toggle">
                           <span class="visually-hidden">Изменить максимальную цену.</span>
                         </button>
-                        <label class="catalog-filter-label">
-                          до <input class="range-input" type="number" value="1500" name="max-price">
+                        <label class="catalog-filter-label label-max">
+                          до <input class="range-input" type="number" value="5000" name="max-price">
                         </label>
                       </div>
                     </div>
                   </div>
                 </fieldset>
-                <fieldset class="filter-group">
+                <fieldset class="filter filter-group">
                   <legend class="filter-title">Цвет</legend>
                   <ul class="filter-list">
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="checkbox" name="black" checked>
                         <span class="control-mark"></span>
-                        Черный
+                        <span>Черный</span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="checkbox" name="white" checked>
                         <span class="control-mark"></span>
-                        Белый
+                        <span>Белый</span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="checkbox" name="blue">
                         <span class="control-mark"></span>
-                        Синий
+                        <span>Синий</span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="checkbox" name="red">
                         <span class="control-mark"></span>
-                        Красный
+                        <span>Красный</span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="checkbox" name="pink">
                         <span class="control-mark"></span>
-                        Розовый
+                        <span>Розовый</span>
                       </label>
                     </li>
                   </ul>
                 </fieldset>
-                <fieldset class="filter-bluetooth">
+                <fieldset class="filter filter-bluetooth">
                   <legend class="filter-title">Bluetooth</legend>
                   <ul class="filter-list">
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="radio" name="bluetooth" value="yes" checked>
                         <span class="control-mark"></span>
-                        Есть
+                        <span>Есть</span>
                       </label>
                     </li>
                     <li class="filter-item">
                       <label class="control">
                         <input class="visually-hidden control-input" type="radio" name="bluetooth" value="no">
                         <span class="control-mark"></span>
-                        Нет
+                        <span>Нет</span>
                       </label>
                     </li>
                   </ul>
@@ -270,7 +272,7 @@
                 <li class="product-card">
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-amateur.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Любительская селфи-палка</h3>
+                    <h3 class="product-card-title">Любительская<br>селфи-палка</h3>
                     <b class="product-card-price">500 ₽</b>
                   </a>
                   <a class="button" href="#">Подробнее</a>
@@ -279,25 +281,25 @@
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-professional.jpg" width="360" height="380" alt="">
                     <h3 class="product-card-title">Профессиональная селфи-палка</h3>
-                    <b class="product-card-price">1500 ₽</b>
-                    <a class="button" href="#">Подробнее</a>
+                    <b class="product-card-price">1 500 ₽</b>
                   </a>
+                  <a class="button" href="#">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link product-card-new" href="#">
                     <img class="product-card-image" src="images/content/monopod-unsinkable.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Непотопляемая селфи-палка</h3>
-                    <b class="product-card-price">2500 ₽</b>
-                    <a class="button" href="#">Подробнее</a>
+                    <h3 class="product-card-title">Непотопляемая<br>селфи-палка</h3>
+                    <b class="product-card-price">2 500 ₽</b>
                   </a>
+                  <a class="button" href="#">Подробнее</a>
                 </li>
                 <li class="product-card">
                   <a class="product-card-link" href="#">
                     <img class="product-card-image" src="images/content/monopod-follow-me.jpg" width="360" height="380" alt="">
-                    <h3 class="product-card-title">Селфи-палка «Следуй за мной»</h3>
-                    <b class="product-card-price">1500 ₽</b>
-                    <a class="button" href="#">Подробнее</a>
+                    <h3 class="product-card-title">Селфи-палка&nbsp;«Следуй за мной»</h3>
+                    <b class="product-card-price">1 500 ₽</b>
                   </a>
+                  <a class="button" href="#">Подробнее</a>
                 </li>
               </ul>
               <button class="button pagination-more" type="button">Загрузить ещё</button>
@@ -320,7 +322,7 @@
                     <a class="pagination-link" href="#">15</a>
                   </li>
                 </ol>
-                  <a class="pagination-button pagination-actived" href="#">Вперёд</a>
+                  <a class="pagination-button pagination-activated" href="#">Вперёд</a>
               </div>
             </section>
           </div>
@@ -335,7 +337,7 @@
           <img class="footer-contacts-logo" src="images/icons/logo-footer.svg" width="145" height="36" alt="Логотип магазина «Девайс».">
         </a>
         <address class="footer-contacts-address">
-          <h2 class="visually-hidden">Адрес</h2>
+          <span class="visually-hidden">Адрес</span>
           <p class="footer-contacts-address-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
         </address>
 
@@ -352,7 +354,7 @@
         </ul>
 
         <address class="footer-contacts-phone">
-          <h2 class="visually-hidden">Телефон</h2>
+          <span class="visually-hidden">Телефон</span>
           <a class="footer-contacts-phone-link" href="tel:78128121212">Тел.: +7 (812) 812-12-12</a>
         </address>
 
