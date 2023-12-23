@@ -530,7 +530,7 @@ img {
 .navigation-main {
   display: grid;
   height: auto;
-  max-width: 475px;
+  max-width: 470px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px 45px;
   justify-items: end;
@@ -1706,6 +1706,10 @@ img {
   outline-offset: -2px;
 }
 
+.rare-item-order-field:invalid + .field-error {
+  display: block;
+}
+
 .rare-item-order-field:disabled {
   opacity: 0.3;
 }
@@ -1736,6 +1740,7 @@ img {
 
 .field-error {
   color: #FF3D3D;
+  display: none;
 }
 
 .description-field {
