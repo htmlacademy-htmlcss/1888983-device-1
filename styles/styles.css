@@ -39,6 +39,11 @@ body {
   color: #000000;
 }
 
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .main-index {
   flex-grow: 1;
 }
@@ -544,10 +549,11 @@ body {
   max-width: min-content;
 }
 
-/* Здесь у первых двух какие-то мелкие отступы,
-я не знаю, стоит ли их делать. */
+/* Здесь у первых двух в макете какие-то
+мелкие отступы, я не знаю, стоит ли их делать. */
 
 .catalog-header {
+  position: relative;
   display: flex;
   color: #000000;
   text-align: left;
@@ -555,6 +561,7 @@ body {
   justify-content: space-between;
   text-decoration: none;
   margin: 0;
+  z-index: 2;
 }
 
 .catalog-button {
@@ -842,13 +849,6 @@ body {
   padding-left: 30px;
 }
 
-/* Если бы кнопки обрамляли весь слайд, а не только картинку,
-я бы добавил их в разметке в общую обёртку для слайдера,
-к списку слайдов, и выровнял бы по размеру этого блока, без учёта
-кругляшей пагинации. Но на макете они обрамляют именно изображение,
-поэтому было решено выравнивать их по featured и с указанием общей
-ширины для блока, чтобы разнести их по его краям. */
-
 .slider-button {
   width: 20px;
   height: 60px;
@@ -1035,8 +1035,10 @@ body {
   background-image: url(../images/decor/credit.svg);
   background-repeat: no-repeat;
   background-position: center right;
-  background-size: 136px 164px;
+  background-size: 156px 188px;
 }
+
+/* Скрыты для удобства. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
@@ -1374,6 +1376,10 @@ body {
   background-color: #444444;
 }
 
+.footer-logo {
+  margin-right: auto;
+}
+
 .page-footer-wrapper {
   color: #ffffff;
   font-size: 16px;
@@ -1389,9 +1395,6 @@ body {
   gap: 35px 119px;
   padding: 62px 0 47px 0;
 }
-
-/* Я поставил весь центральный ряд по центру, потому что в макете
-полный бардак. Где-то 4 пикселя отступ сверху, где-то 7. */
 
 .footer-contacts-logo {
   display: block;
@@ -1701,6 +1704,10 @@ body {
 .rare-item-order-field:invalid {
   outline: 2px solid #FF3D3D;
   outline-offset: -2px;
+}
+
+.rare-item-order-field:disabled {
+  opacity: 0.3;
 }
 
 .name-field,
@@ -2131,7 +2138,7 @@ body {
   transition: all 0.15s;
 }
 
-.control:disabled + .control-mark {
+.control-input:disabled ~ span {
   opacity: 0.1;
 }
 
@@ -2344,8 +2351,6 @@ body {
 .product-card-link:active .product-card-price {
   opacity: 0.4;
 }
-
-/* Значения указал на глаз, потому что в стайлгайде это не прописано. */
 
 .product-card-link:focus {
   outline: 2px solid #AF4FFF;
