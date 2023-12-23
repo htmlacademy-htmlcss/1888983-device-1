@@ -549,9 +549,6 @@ img {
   max-width: min-content;
 }
 
-/* Здесь у первых двух в макете какие-то
-мелкие отступы, я не знаю, стоит ли их делать. */
-
 .catalog-header {
   position: relative;
   display: flex;
@@ -630,8 +627,6 @@ img {
   z-index: 1;
 }
 
-/* При переполнении текстом почему-то вылезает за границы. */
-
 .catalog li {
   min-width: 220px;
   margin-bottom: 18px;
@@ -643,9 +638,6 @@ img {
   display: block;
   height: 40px;
 }
-
-/* Здесь между всеми колонками разные отступы, я решил унифицировать,
-поэтому последняя колонка чуть ближе, чем в макете. */
 
 .navigation-catalog:hover .catalog {
   display: flex;
@@ -688,8 +680,6 @@ img {
 .slider-monopod {
   display: none;
 }
-
-/* Скрыты для удобства. */
 
 .slider-image {
   display: block;
@@ -1037,8 +1027,6 @@ img {
   background-position: center right;
   background-size: 156px 188px;
 }
-
-/* Скрыты для удобства. */
 
 .advantages-header {
   font-family: "Raleway", sans-serif;
