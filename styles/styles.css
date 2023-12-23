@@ -1860,11 +1860,7 @@ img {
 }
 
 .main-inner {
-  background-color: #ffffff;
-  color: #000000;
   flex-grow: 1;
-  width: 1160px;
-  margin: 0 auto;
 }
 
 .inner-header {
@@ -1940,6 +1936,8 @@ img {
 
 .inner-wrapper {
   display: flex;
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .inner-left-column {
@@ -2285,7 +2283,7 @@ img {
 .product-card-link {
   position: relative;
   display: grid;
-  grid-template-columns: min-content auto;
+  grid-template-columns: 230px auto;
   gap: 32px 10px;
   text-decoration: none;
   color: inherit;
